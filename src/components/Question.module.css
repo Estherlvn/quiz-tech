@@ -1,0 +1,9 @@
+.question {
+    margin: 20px 0;
+  }
+  
+  .answers {
+    display: flex;
+    flex-direction: column;
+  }
+  

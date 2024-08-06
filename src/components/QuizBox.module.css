@@ -1,0 +1,167 @@
+body {
+  background-color: #fdf5e6;
+}
+
+.quiz {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+}
+
+.current, .scoreValue {
+  font-size: 24px;
+  background-color: #FBD7D5;
+  color: rgb(0, 0, 0);
+  border-radius: 5%;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.total, .totalValue {
+  font-size: 24px;
+  color: #333;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px; /* Ajouter un espace sous le titre */
+}
+
+.backgroundImage {
+  width: 100vw; 
+  height: 400px; 
+  background-image: url('../assets/guirlande.png'); 
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+  background-position: center;
+  opacity: 0.5;
+}
+
+.questionBox {
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 500px;
+  max-height: 40%;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: -300px; /* Ajustez cette valeur pour rapprocher du header */
+  z-index: 2; /* Placer au-dessus de l'image de fond */
+  position: relative; /* Assurez-vous que la position est relative pour le z-index */
+}
+
+.questionBox .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.questionTitle {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.questionText {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.answer {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.answer:hover {
+  background-color: #f3f4f6;
+}
+
+.answer.selected {
+  background-color: #FBD7D5;
+}
+
+.answerLetter {
+  font-size: 18px;
+  background-color: #FBD7D5;
+  color: #333;
+  border-radius: 50%;
+  padding: 5px 10px;
+  margin-right: 15px;
+}
+
+.answerText {
+  font-size: 18px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.backButton {
+ background-color: #8FACBE;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+}
+
+.backButton:hover {
+  background-color: #ffffff;
+  color:#8FACBE;
+  border-color: #8FACBE;
+}
+
+.submitButton {
+  background-color: #50708A;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submitButton:hover {
+  background-color: #8FACBE;
+}
+
+.score {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.scoreValue {
+  font-size: 20px;
+  background-color: #f87171;
+  color: white;
+  border-radius: 3px;
+  padding: 10px;
+  margin: 0 10px;
+}
+
+.totalValue {
+  font-size: 20px;
+  color: #333;
+}

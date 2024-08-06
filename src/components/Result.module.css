@@ -1,0 +1,14 @@
+.result {
+  text-align: center;
+}
+
+.restartButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #b946988e;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+}

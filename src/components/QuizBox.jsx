@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Question from './Question';
 import Result from './Result';
 import styles from './QuizBox.module.css';
-import questions from '../data/questions';
+import questions from '../data/général';
 import avatar from '../assets/avatar-homepage.png'; // Assurez-vous que le chemin est correct
 
 const Quiz = () => {
@@ -73,7 +73,7 @@ const Quiz = () => {
                 <div className={styles.totalValue}>{questions.length}</div>
               </div>
             </div>
-            <h1 className={styles.title}>Développement web</h1>
+            <h1 className={styles.title}>JavaScript</h1>
             <h2 className={styles.questionTitle}>Question {currentQuestionIndex + 1}</h2>
             <p className={styles.questionText}>{questions[currentQuestionIndex].text}</p>
             <div className={styles.answers}>
@@ -85,6 +85,7 @@ const Quiz = () => {
                 >
                   <span className={styles.answerLetter}>{String.fromCharCode(65 + index)}</span>
                   <span className={styles.answerText}>{answer.text}</span>
+                  <input type="checkbox" checked={selectedAnswer === answer} readOnly />
                 </div>
               ))}
             </div>

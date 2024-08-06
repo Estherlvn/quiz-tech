@@ -1,14 +1,14 @@
 .header {
   display: flex;
   align-items: center;
-  padding: 10px 20px;
+  padding: 0px 20px;
   background-color: #50708A;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   justify-content: space-between; /* Ajoutez cette ligne pour espacer les éléments */
 }
 
 .logo {
-  height: 50px; /* Ajustez la hauteur du logo selon vos besoins */
+  height: 70px; /* Ajustez la hauteur du logo selon vos besoins */
   margin-right: 20px;
   border-radius: 50%;
 }
@@ -27,7 +27,7 @@
 
 .nav li {
   margin: 0 10px;
-  padding-top: 20px
+  padding-top: 10px
 }
 
 .nav a {
@@ -40,4 +40,8 @@
 
 .nav a:hover {
   background-color: #555;
+}
+
+.boutonLogImage{
+  width: 50px;
 }

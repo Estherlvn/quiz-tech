@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+.home {
+  font-family: 'JetBrains Mono', monospace;
+  position: relative;
+  background-color: #fdf5e6; /* Assurez-vous que cette couleur de fond est appliquée */
+}
+
+.UpContainer {
+  position: absolute;
+  margin: 70px 0 0 36%;
+  width: 30%;
+  position: relative; /* Ajoutez une position pour que le z-index fonctionne */
+}
+
+.home h1 {
+  color: #3E4C59;
+  text-align: center;
+  margin: 0; /* Réinitialisez les marges par défaut */
+  padding-bottom: 10px; /* Ajoutez du padding pour espacer du bord */
+}
+
+.home h2 {
+  color: #3E4C59;
+  text-align: center;
+  margin: 0; /* Réinitialisez les marges par défaut */
+  padding-top: 10px; /* Ajoutez du padding pour espacer du bord */
+}
+
+.arbre {
+  position: absolute;
+  width: 35%;
+  top: -70px; /* Enlever la marge en haut */
+  right: 0; /* Enlever la marge à droite */
+  z-index: 1; /* Placez l'image en dessous des autres éléments */
+}
+
+.ellipseContainer {
+    position: relative;
+    z-index: 2; /* Assurez-vous que l'image ellipse est au-dessus de home-bar */
+    margin: -150px 0 0 0; /* Déplacez l'ellipse vers le haut */
+    display: flex;
+    justify-content: center;
+  }
+  
+.ellipse {
+    margin-right: 61%;
+    width: 30%;
+    display: block;
+  }  
+
+.avatar-homepage {
+  position: absolute;
+  z-index: 4; /* Assurez-vous que l'image avatar-homepage est au-dessus de l'ellipse */
+  top: 43%; /* Ajustez cette valeur pour remonter l'image dans l'ellipse */
+  left: 19%; /* Ajustez cette valeur pour centrer horizontalement */
+  transform: translate(-50%, -50%); /* Centrez l'image dans l'ellipse */
+  width: 29%; /* Ajustez la taille de l'avatar selon vos besoins */
+  height: auto; /* Maintenez les proportions de l'image */
+}
+
+.home-bar {
+  position: absolute;
+  z-index: 3; /* Assurez-vous que l'image home-bar est au-dessus de l'arbre */
+  display: block;
+  margin: 20px auto 0; /* Centrez l'image et ajoutez une marge inférieure */
+  top: 70%; /* Ajustez cette valeur pour positionner l'image juste en dessous de l'avatar-homepage */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajoute une ombre à l'image */
+}
+
+.searchAndButtonContainer {
+    position: absolute;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 35%;
+    margin-top: -13%;
+  }
+  
+  .searchBar {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin-right: 15px; /* Espace entre la barre de recherche et le bouton */
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  .searchBar input {
+    background-color: #ffffff;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    font-family: 'JetBrains Mono', monospace;
+    padding: 5px;
+  }
+
+  .validationButton {
+    background: #FFC1C3;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 30px;
+    color: white;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  
+  .validationButton:hover {
+    background-color: #FBD7D5;
+  }
+  
+  .startQuizButton {
+    padding: 10px 20px;
+    background-color: #FFC1C3;
+    color: #3E4C59;
+    border: solid 1px #3E4C59 ;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  
+  .startQuizButton:hover {
+    background-color: #FBD7D5;
+  }
+  

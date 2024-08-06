@@ -50,12 +50,14 @@ body {
   background-color: white;
   padding: 20px;
   border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
   min-width: 500px;
+  max-width: 50%;
   max-height: 40%;
   width: 50%;
   margin-left: 25%;
-  margin-top: -300px; /* Ajustez cette valeur pour rapprocher du header */
+  margin-top: -23%; /* Ajustez cette valeur pour rapprocher du header */
+  margin-bottom: 20%;
   z-index: 2; /* Placer au-dessus de l'image de fond */
   position: relative; /* Assurez-vous que la position est relative pour le z-index */
 }

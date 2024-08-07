@@ -1,9 +1,12 @@
+// Quiz.jsx
 import React from 'react';
-import QuizBox from '../components/QuizBox';
+import QuizMenu from '../components/QuizMenu';
+import styles from './Quiz.module.css';
 
 const Quiz = () => (
-  <div>
-    <QuizBox />
+  <div className={styles.quizPage}>
+    <div className={styles.backgroundImage}></div>
+    <QuizMenu />
   </div>
 );
 

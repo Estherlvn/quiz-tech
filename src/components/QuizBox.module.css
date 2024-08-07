@@ -1,3 +1,4 @@
+/* QuizBox.module.css */
 body {
   background-color: #fdf5e6;
 }
@@ -36,16 +37,6 @@ body {
   margin-bottom: 10px; /* Ajouter un espace sous le titre */
 }
 
-.backgroundImage {
-  width: 100vw; 
-  height: 400px; 
-  background-image: url('../assets/guirlande.png'); 
-  background-size: auto 100%;
-  background-repeat: repeat-x;
-  background-position: center;
-  opacity: 0.5;
-}
-
 .questionBox {
   background-color: white;
   padding: 20px;
@@ -78,6 +69,8 @@ body {
   text-align: center;
   font-size: 18px;
   margin-bottom: 10px;
+  font-family: 'Montserrat', sans-serif; /* Ajouter la police Montserrat */
+  font-weight: 500; /* Utiliser un poids de police plus gras */
 }
 
 .answer {
@@ -99,6 +92,8 @@ body {
 
 .answerLetter {
   font-size: 18px;
+  font-family: 'Montserrat', sans-serif; /* Ajouter la police Montserrat */
+  font-weight: 500; /* Utiliser un poids de police plus gras */
   background-color: #FBD7D5;
   color: #333;
   border-radius: 50%;
@@ -108,6 +103,8 @@ body {
 
 .answerText {
   font-size: 18px;
+  font-family: 'Montserrat', sans-serif; /* Ajouter la police Montserrat */
+  font-weight: 500; /* Utiliser un poids de police plus gras */
 }
 
 .actions {
@@ -117,19 +114,18 @@ body {
 }
 
 .backButton {
- background-color: #8FACBE;
+  background-color: #8FACBE;
   color: #ffffff;
   padding: 10px 20px;
   border-radius: 30px;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s;
-
 }
 
 .backButton:hover {
   background-color: #ffffff;
-  color:#8FACBE;
+  color: #8FACBE;
   border-color: #8FACBE;
 }
 

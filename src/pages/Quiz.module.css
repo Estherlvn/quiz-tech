@@ -1,0 +1,15 @@
+/* Quiz.module.css */
+body {
+    background-color: #fdf5e6;
+  }
+  
+  .backgroundImage {
+    width: 100vw; 
+    height: 400px; 
+    background-image: url('../assets/guirlande.png'); 
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+    background-position: center;
+    opacity: 0.5;
+  }
+  

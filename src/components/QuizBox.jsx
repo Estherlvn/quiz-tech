@@ -1,16 +1,30 @@
-import React, { useState } from 'react';
-import Question from './Question';
+// QuizBox.jsx
+import React, { useState, useEffect } from 'react';
 import Result from './Result';
 import styles from './QuizBox.module.css';
-import questions from '../data/général';
+import devweb from '../data/devweb';
+import uiux from '../data/uiux';
 import avatar from '../assets/avatar-homepage.png'; // Assurez-vous que le chemin est correct
 
-const Quiz = () => {
+const QuizBox = ({ selectedTheme }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [answersHistory, setAnswersHistory] = useState([]);
+  const [questions, setQuestions] = useState(devweb);
+
+  useEffect(() => {
+    if (selectedTheme === 'uiux') {
+      setQuestions(uiux);
+    } else {
+      setQuestions(devweb);
+    }
+    setCurrentQuestionIndex(0);
+    setScore(0);
+    setShowResult(false);
+    setAnswersHistory([]);
+  }, [selectedTheme]);
 
   const handleAnswerClick = (answer) => {
     setSelectedAnswer(answer);
@@ -50,7 +64,7 @@ const Quiz = () => {
     return answersHistory.reduce((score, answer) => (answer && answer.isCorrect ? score + 1 : score), 0);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     setScore(calculateScore());
   }, [answersHistory]);
 
@@ -73,7 +87,7 @@ const Quiz = () => {
                 <div className={styles.totalValue}>{questions.length}</div>
               </div>
             </div>
-            <h1 className={styles.title}>JavaScript</h1>
+            <h1 className={styles.title}>{selectedTheme === 'uiux' ? 'UI/UX' : 'Développement web'}</h1>
             <h2 className={styles.questionTitle}>Question {currentQuestionIndex + 1}</h2>
             <p className={styles.questionText}>{questions[currentQuestionIndex].text}</p>
             <div className={styles.answers}>
@@ -100,4 +114,4 @@ const Quiz = () => {
   );
 };
 
-export default Quiz;
+export default QuizBox;

@@ -1,4 +1,3 @@
-/* QuizMenu.module.css */
 .quizMenu {
   display: flex;
   flex-direction: row;
@@ -9,9 +8,10 @@
 }
 
 .themeContainer {
+  z-index: 2; /* Placer au-dessus de l'image de fond */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* Aligne le titre et les blocs de thème au centre */
   margin-right: 20px;
 }
 

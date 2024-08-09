@@ -42,13 +42,8 @@ body {
   padding: 20px;
   border-radius: 20px;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
-  min-width: 500px;
-  max-width: 50%;
-  max-height: 40%;
-  width: 50%;
-  margin-left: 25%;
-  margin-top: -23%; /* Ajustez cette valeur pour rapprocher du header */
-  margin-bottom: 20%;
+  min-width: 600px;
+  max-width: 600px;
   z-index: 2; /* Placer au-dessus de l'image de fond */
   position: relative; /* Assurez-vous que la position est relative pour le z-index */
 }
@@ -114,33 +109,36 @@ body {
 }
 
 .backButton {
-  background-color: #8FACBE;
-  color: #ffffff;
   padding: 10px 20px;
-  border-radius: 30px;
-  border: none;
+  background-color: #90ADBF;
+  color : white;
+  border: solid 1px #3E4C59 ;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 .backButton:hover {
-  background-color: #ffffff;
-  color: #8FACBE;
-  border-color: #8FACBE;
+  background-color:#C7DEF0;
+  color: #3E4C59;
+  border-color: #3E4C59;
 }
 
 .submitButton {
-  background-color: #50708A;
-  color: white;
   padding: 10px 20px;
-  border: none;
-  border-radius: 30px;
+  background-color: #FFC1C3;
+  color: #3E4C59;
+  border: solid 1px #3E4C59 ;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 .submitButton:hover {
-  background-color: #8FACBE;
+  background-color:#da84a4;
+  color: #fff;
 }
 
 .score {

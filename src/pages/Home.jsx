@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Importez useNavigate
 import homeBar from '../assets/home-bar.png';
 import ellipse from '../assets/ellipse.png';
@@ -8,6 +8,21 @@ import styles from './Home.module.css';
 
 const Home = () => {
   const navigate = useNavigate(); // Utilisez useNavigate pour la redirection
+  const [searchTerm, setSearchTerm] = useState(''); // État pour stocker le terme de recherche
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleSearchSubmit = () => {
+    const themes = ['développementweb', 'uxui', 'css', 'html']; // Liste des thèmes disponibles
+
+    if (themes.includes(searchTerm.toLowerCase())) {
+      navigate(`/quiz?theme=${searchTerm.toLowerCase()}`); // Redirige vers la page Quiz avec le thème en paramètre
+    } else {
+      alert('Thème non trouvé');
+    }
+  };
 
   const handleStartQuiz = () => {
     navigate('/quiz'); // Redirige vers la page Quiz
@@ -26,8 +41,13 @@ const Home = () => {
       </div>
       <div className={styles.searchAndButtonContainer}>
         <div className={styles.searchBar}>
-          <input type="text" placeholder="Rechercher un Quiz" />
-          <button className={styles.validationButton}></button>
+          <input 
+            type="text" 
+            placeholder="Rechercher un Quiz" 
+            value={searchTerm} 
+            onChange={handleSearchChange} 
+          />
+          <button className={styles.validationButton} onClick={handleSearchSubmit}>GO</button>
         </div>
         <button className={styles.startQuizButton} onClick={handleStartQuiz}>
           Lancer un Quiz

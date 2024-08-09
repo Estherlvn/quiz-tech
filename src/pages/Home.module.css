@@ -8,7 +8,7 @@
 
 .UpContainer {
   position: absolute;
-  margin: 70px 0 0 36%;
+  margin: 70px 0 0 38%;
   width: 30%;
   position: relative; /* Ajoutez une position pour que le z-index fonctionne */
 }
@@ -84,7 +84,7 @@
     align-items: center;
     border: none;
     border-radius: 20px;
-    padding: 5px 10px;
+    padding-left: 20px;
     margin-right: 15px; /* Espace entre la barre de recherche et le bouton */
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
   }
@@ -95,13 +95,12 @@
     border: none;
     outline: none;
     font-family: 'JetBrains Mono', monospace;
-    padding: 5px;
   }
 
   .validationButton {
     background: #FFC1C3;
     border: none;
-    padding: 15px;
+    padding: 10px;
     cursor: pointer;
     border-radius: 30px;
     color: white;
@@ -113,7 +112,7 @@
   }
   
   .startQuizButton {
-    padding: 10px 20px;
+    padding: 10px 10px;
     background-color: #FFC1C3;
     color: #3E4C59;
     border: solid 1px #3E4C59 ;
@@ -124,6 +123,7 @@
   }
   
   .startQuizButton:hover {
-    background-color: #FBD7D5;
+    background-color:#da84a4;
+    color: #fff;
   }
   

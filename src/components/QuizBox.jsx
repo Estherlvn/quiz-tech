@@ -1,30 +1,25 @@
-// QuizBox.jsx
-import React, { useState, useEffect } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import Result from './Result';
 import styles from './QuizBox.module.css';
-import devweb from '../data/devweb';
-import uiux from '../data/uiux';
-import avatar from '../assets/avatar-homepage.png'; // Assurez-vous que le chemin est correct
+import développementweb from '../data/développementweb';
+import uxui from '../data/uxui';
+import css from '../data/css'; // Import du fichier de questions CSS
+import html from '../data/html'; // Import du fichier de questions HTML
 
 const QuizBox = ({ selectedTheme }) => {
+  const questions = selectedTheme === 'uxui'
+    ? uxui
+    : selectedTheme === 'css'
+      ? css
+      : selectedTheme === 'html'
+        ? html
+        : développementweb; // Sélectionne les questions en fonction du thème
+
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [answersHistory, setAnswersHistory] = useState([]);
-  const [questions, setQuestions] = useState(devweb);
-
-  useEffect(() => {
-    if (selectedTheme === 'uiux') {
-      setQuestions(uiux);
-    } else {
-      setQuestions(devweb);
-    }
-    setCurrentQuestionIndex(0);
-    setScore(0);
-    setShowResult(false);
-    setAnswersHistory([]);
-  }, [selectedTheme]);
 
   const handleAnswerClick = (answer) => {
     setSelectedAnswer(answer);
@@ -60,13 +55,13 @@ const QuizBox = ({ selectedTheme }) => {
     setAnswersHistory([]);
   };
 
-  const calculateScore = () => {
+  const calculateScore = useCallback(() => {
     return answersHistory.reduce((score, answer) => (answer && answer.isCorrect ? score + 1 : score), 0);
-  };
+  }, [answersHistory]);
 
   useEffect(() => {
     setScore(calculateScore());
-  }, [answersHistory]);
+  }, [answersHistory, calculateScore]);
 
   return (
     <div className={styles.quiz}>
@@ -87,7 +82,12 @@ const QuizBox = ({ selectedTheme }) => {
                 <div className={styles.totalValue}>{questions.length}</div>
               </div>
             </div>
-            <h1 className={styles.title}>{selectedTheme === 'uiux' ? 'UI/UX' : 'Développement web'}</h1>
+            <h1 className={styles.title}>
+              {selectedTheme === 'uxui' ? 'UX UI' :
+              selectedTheme === 'css' ? 'CSS' : 
+              selectedTheme === 'html' ? 'HTML' : 
+              'Développement Web'}
+            </h1>
             <h2 className={styles.questionTitle}>Question {currentQuestionIndex + 1}</h2>
             <p className={styles.questionText}>{questions[currentQuestionIndex].text}</p>
             <div className={styles.answers}>
@@ -99,7 +99,6 @@ const QuizBox = ({ selectedTheme }) => {
                 >
                   <span className={styles.answerLetter}>{String.fromCharCode(65 + index)}</span>
                   <span className={styles.answerText}>{answer.text}</span>
-                  <input type="checkbox" checked={selectedAnswer === answer} readOnly />
                 </div>
               ))}
             </div>

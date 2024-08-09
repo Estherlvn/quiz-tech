@@ -1,4 +1,4 @@
-const devwebQuestions = [
+const développementwebQuestions = [
     {
       text: 'Quelle est la dernière version stable de React ?',
       answers: [
@@ -100,5 +100,5 @@ const devwebQuestions = [
     }
   ];
   
-  export default devwebQuestions;
+  export default développementwebQuestions;
   

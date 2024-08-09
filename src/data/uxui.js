@@ -1,4 +1,4 @@
-const uiuxQuestions = [
+const uxuiQuestions = [
     {
       text: 'Quelle est la première étape du processus de conception UX ?',
       answers: [
@@ -100,5 +100,5 @@ const uiuxQuestions = [
     }
   ];
   
-  export default uiuxQuestions;
+  export default uxuiQuestions;
   

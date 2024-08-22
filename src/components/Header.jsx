@@ -7,7 +7,9 @@ import boutonLog from '../assets/bouton-log.png'; // Assurez-vous que le chemin 
 const Header = () => (
   <header className={styles.header}>
     <div className={styles.logoContainer}>
+      <Link to="/">
       <img src={logo} alt="Logo QuizTech" className={styles.logo} />
+      </Link>
     </div>
     <nav className={styles.nav}>
       <ul>

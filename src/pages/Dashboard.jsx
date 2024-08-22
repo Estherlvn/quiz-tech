@@ -1,9 +1,11 @@
 import React from 'react';
+import styles from './Dashboard.module.css';
+import Board from '../components/Board'; // Assurez-vous d'avoir créé un composant Board
 
 const Dashboard = () => (
-  <div>
-    <h2>Tableau de Bord</h2>
-    <p>Bienvenue sur le tableau de bord.</p>
+  <div className={styles.dashboardPage}>
+    <div className={styles.backgroundImage}></div>
+    <Board />
   </div>
 );
 

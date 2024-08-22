@@ -1,17 +1,28 @@
 .header {
+  height: 70px;
   display: flex;
   align-items: center;
-  padding: 0px 20px;
+  padding: 0px;
   background-color: #50708A;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  justify-content: space-between; /* Ajoutez cette ligne pour espacer les éléments */
+  justify-content: space-between; /* Espacer les éléments */
+  position: relative; /* Permet de jouer avec le z-index */
+  z-index: 1000; /* Assurez-vous que le header est au-dessus des autres éléments */
 }
 
+
 .logo {
-  height: 70px; /* Ajustez la hauteur du logo selon vos besoins */
-  margin-right: 20px;
+  height: 60px; /* Hauteur initiale du logo */
+  margin-top: 3px;
+  margin-left: 15px;
   border-radius: 50%;
+  transition: transform 0.1s ease-in-out; /* Ajoute une transition fluide pour l'agrandissement */
 }
+
+.logo:hover {
+  transform: scale(1.2); /* Agrandit le logo de 20% lors du hover */
+}
+
 
 .nav {
   display: flex;
@@ -39,7 +50,9 @@
 }
 
 .nav a:hover {
-  background-color: #555;
+  background-color: #FBD7D5;
+  color: #333;
+  border-radius: 2px;
 }
 
 .boutonLogImage{

@@ -63,6 +63,15 @@ const QuizBox = ({ selectedTheme }) => {
     setScore(calculateScore());
   }, [answersHistory, calculateScore]);
 
+  // Code ajouté : Réinitialiser l'état du quiz lorsque le thème change
+  useEffect(() => {
+    setCurrentQuestionIndex(0);
+    setScore(0);
+    setShowResult(false);
+    setSelectedAnswer(null);
+    setAnswersHistory([]);
+  }, [selectedTheme]);
+
   return (
     <div className={styles.quiz}>
       {showResult ? (

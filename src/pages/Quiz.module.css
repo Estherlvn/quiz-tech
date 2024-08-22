@@ -4,15 +4,14 @@ body {
   }
   
   .backgroundImage {
-    width: 100vw; 
-    height: 400px; 
-    background-image: url('../assets/guirlande.png'); 
-    background-size: auto 100%;
-    background-repeat: repeat-x;
-    background-position: center;
-    opacity: 0.5;
-    position: absolute; /* Position absolute pour placer l'image derrière */
-    top: 10%; /* Aligner en haut */
-    left: 0; /* Aligner à gauche */
-    z-index: 1; /* Assurez-vous que l'image de fond est derrière les autres éléments */
-  }
+    background-image: url('../assets/branche.png'); 
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    background-size: contain; /* Redimensionne l'image pour qu'elle soit entièrement visible sans être rognée */
+    background-position: right center; /* Place l'image à droite et au centre verticalement */
+    position: absolute; /* Positionne l'image de manière absolue */
+    top: 15%; /* Ajustez la distance par rapport au haut de la page */
+    right: 0; /* Collez l'image au bord droit */
+    width: 50%; /* Largeur du conteneur */
+    height: 50%; /* Hauteur du conteneur */
+    z-index: 1; /* Assurez-vous que l'image est derrière les autres éléments */
+}

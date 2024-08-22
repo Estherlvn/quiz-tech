@@ -16,7 +16,7 @@
 .home h1 {
   color: #3E4C59;
   text-align: center;
-  margin: 0; /* Réinitialisez les marges par défaut */
+  margin-bottom: 0; /* Réinitialisez les marges par défaut */
   padding-bottom: 10px; /* Ajoutez du padding pour espacer du bord */
 }
 
@@ -29,10 +29,10 @@
 
 .arbre {
   position: absolute;
-  width: 35%;
-  top: -70px; /* Enlever la marge en haut */
+  width: 36%;
+  top: -75px; /* Enlever la marge en haut */
   right: 0; /* Enlever la marge à droite */
-  z-index: 1; /* Placez l'image en dessous des autres éléments */
+  z-index: 4; /* Placez l'image en dessous des autres éléments */
 }
 
 .ellipseContainer {
@@ -57,14 +57,21 @@
   transform: translate(-50%, -50%); /* Centrez l'image dans l'ellipse */
   width: 29%; /* Ajustez la taille de l'avatar selon vos besoins */
   height: auto; /* Maintenez les proportions de l'image */
+  box-shadow: (0 0 20px rgba(255, 255, 255, 0.7))
+}
+
+/* Effet de halo coloré */
+.avatar-homepage {
+  filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.7));
 }
 
 .home-bar {
+  width: 100%;
+  height: 30%;
   position: absolute;
   z-index: 3; /* Assurez-vous que l'image home-bar est au-dessus de l'arbre */
   display: block;
-  margin: 20px auto 0; /* Centrez l'image et ajoutez une marge inférieure */
-  top: 70%; /* Ajustez cette valeur pour positionner l'image juste en dessous de l'avatar-homepage */
+  top: 75%; /* Ajustez cette valeur pour positionner l'image juste en dessous de l'avatar-homepage */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajoute une ombre à l'image */
 }
 
@@ -74,7 +81,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 35%;
+    margin-left: 37%;
     margin-top: -13%;
   }
   

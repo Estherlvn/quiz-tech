@@ -34,7 +34,7 @@
 
 .arbre {
   position: absolute;
-  width: 38%;
+  width: 37%;
   top: -77px; /* Enlever la marge en haut */
   right: 0; /* Enlever la marge à droite */
   z-index: 4; /* Placez l'image en dessous des autres éléments */
@@ -100,18 +100,14 @@
     font-family: 'JetBrains Mono', monospace;
   }
 
-  .validationButton {
-    background: #da84a4;
+  .arrowRight {
+    border-radius: 10px;
     border: none;
-    padding: 10px;
+    background-color: #ffffff;
+    color: #da84a4;
+    font-size: 25px;
     cursor: pointer;
-    border-radius: 30px;
-    color: white;
-    font-family: 'JetBrains Mono', monospace;
-  }
-  
-  .validationButton:hover {
-    background-color: #e594a4;
+    margin: 3px;
   }
   
   .startQuizButton {

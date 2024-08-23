@@ -27,7 +27,7 @@ const PetitCarousel = () => {
           </div>
         ))}
       </div>
-      <div className={styles.arrowRight}>{">"}</div> {/* Flèche droite */}
+      <div className={styles.arrowRight}>{">"}</div>
     </div>
   );
 };

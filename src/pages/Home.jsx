@@ -6,6 +6,7 @@ import arbre from '../assets/arbre.png';
 import styles from './Home.module.css';
 import PetitCarousel from '../components/PetitCarousel'; // Import du composant PetitCarousel
 import AutoplayCarousel from '../components/AutoplayCarousel';
+import GrandCarousel from '../components/GrandCarousel';
 
 const Home = () => {
   const navigate = useNavigate(); // Utilisez useNavigate pour la redirection
@@ -44,7 +45,7 @@ const Home = () => {
               value={searchTerm} 
               onChange={handleSearchChange} 
             />
-            <button className={styles.validationButton} onClick={handleSearchSubmit}>?</button>
+            <button className={styles.arrowRight} onClick={handleSearchSubmit}>{">"}</button>
           </div>
           <button className={styles.startQuizButton} onClick={handleStartQuiz}>
             Lancer un Quiz
@@ -60,6 +61,8 @@ const Home = () => {
       <AutoplayCarousel />
 
       <PetitCarousel />
+
+      <GrandCarousel />
 
     </div>
   );

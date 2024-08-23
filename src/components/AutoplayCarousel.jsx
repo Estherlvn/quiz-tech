@@ -24,6 +24,24 @@ export default function AutoplayCarousel() {
           );
         })}
       </div>
+      <div className={styles.carouselTrack}>
+        {Object.keys(cardDetails).map((detailKey) => {
+          return (
+            <CarouselItem
+              imgUrl={cardDetails[detailKey].imgUrl}
+              imgTitle={cardDetails[detailKey].title}
+            ></CarouselItem>
+          );
+        })}
+        {Object.keys(cardDetails).map((detailKey) => {
+          return (
+            <CarouselItem
+              imgUrl={cardDetails[detailKey].imgUrl}
+              imgTitle={cardDetails[detailKey].title}
+            ></CarouselItem>
+          );
+        })}
+      </div>
     </div>
   );
 }

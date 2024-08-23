@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ellipse from '../assets/ellipse.png';
 import avatarHomepage from '../assets/avatar-homepage.png';
@@ -10,22 +10,8 @@ import AutoplayCarousel from '../components/AutoplayCarousel';
 const Home = () => {
   const navigate = useNavigate(); // Utilisez useNavigate pour la redirection
   const [searchTerm, setSearchTerm] = useState(''); // État pour stocker le terme de recherche
-  const [displayedText, setDisplayedText] = useState(''); // État pour stocker le texte progressif
-  const fullText = "Teestez vos connaissances Tech et développement web"; // Texte complet à afficher
 
-  useEffect(() => {
-    let index = 0;
-    const interval = setInterval(() => {
-      if (index < fullText.length) {
-        setDisplayedText((prev) => prev + fullText.charAt(index));
-        index++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 100); // Vitesse de frappe (100 ms par lettre)
-
-    return () => clearInterval(interval); // Nettoie l'intervalle si le composant est démonté
-  }, []); // Le tableau de dépendances est vide pour n'exécuter l'effet qu'une seule fois
+  const fullText = "Testez vos connaissances Tech et développement web"; // Texte complet à afficher
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
@@ -49,7 +35,7 @@ const Home = () => {
     <div className={styles.home}>
       <div className={styles.UpContainer}>
         <h1>QuizTech</h1>
-        <h2>{displayedText}</h2> {/* Utilisation de displayedText pour l'effet de texte */}
+        <h2>{fullText}</h2> {/* Affiche directement le texte complet */}
         <div className={styles.searchAndButtonContainer}>
           <div className={styles.searchBar}>
             <input 

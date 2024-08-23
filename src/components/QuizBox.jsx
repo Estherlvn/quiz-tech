@@ -1,10 +1,11 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import Result from './Result';
+import QuizResultHandler from './QuizResultHandler'; // Import du composant
 import styles from './QuizBox.module.css';
 import développementweb from '../data/développementweb';
 import uxui from '../data/uxui';
-import css from '../data/css'; // Import du fichier de questions CSS
-import html from '../data/html'; // Import du fichier de questions HTML
+import css from '../data/css';
+import html from '../data/html';
 
 const QuizBox = ({ selectedTheme }) => {
   const questions = selectedTheme === 'uxui'
@@ -63,7 +64,7 @@ const QuizBox = ({ selectedTheme }) => {
     setScore(calculateScore());
   }, [answersHistory, calculateScore]);
 
-  // Code ajouté : Réinitialiser l'état du quiz lorsque le thème change
+  // Réinitialiser l'état du quiz lorsque le thème change
   useEffect(() => {
     setCurrentQuestionIndex(0);
     setScore(0);
@@ -75,7 +76,11 @@ const QuizBox = ({ selectedTheme }) => {
   return (
     <div className={styles.quiz}>
       {showResult ? (
-        <Result score={score} total={questions.length} onRestart={handleRestart} />
+        <>
+          {/* Intégrer QuizResultHandler pour enregistrer le résultat */}
+          <QuizResultHandler quizTitle={selectedTheme} score={score} />
+          <Result score={score} total={questions.length} onRestart={handleRestart} />
+        </>
       ) : (
         <div className={styles.quizBox}>
           <div className={styles.backgroundImage}></div> {/* Ajout de l'image de fond */}

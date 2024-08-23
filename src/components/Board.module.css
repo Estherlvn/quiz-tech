@@ -1,86 +1,33 @@
+/* src/components/Board.module.css */
 .boardContainer {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    background-color: #f7f2ee; /* Couleur de fond comme dans l'image */
-    padding: 20px;
-    border-radius: 10px;
-    z-index: 2;
-  }
-  
-  .userCard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #fbcdd1; /* Fond rose clair */
-    padding: 20px;
-    border-radius: 10px;
-    margin-right: 20px;
-  }
-  
-  .userInfo {
-    text-align: center;
-  }
-  
-  .userName {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .userStatus {
-    font-size: 0.9rem;
-    color: #3E4C59; /* Couleur de texte plus claire */
-  }
-  
-  .userIcon {
-    margin-top: 10px;
-  }
-  
-  .gamesContainer {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-  
-  .gameCard {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 30%;
-  }
-  
-  .gameCardTitle {
-    font-size: 1.1rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .gameList {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .gameListItem {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 10px;
-  }
-  
-  .gameStar {
-    margin-right: 10px;
-    color: black;
-  }
-  
-  .gameMenuLabel {
-    font-weight: bold;
-    font-size: 1rem;
-  }
-  
-  .gameMenuDescription {
-    font-size: 0.9rem;
-    color: #3E4C59; /* Couleur de texte plus claire */
-  }
-  
+  padding: 20px;
+  background-color: #f7f2ee;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.scoreSection {
+  margin-top: 20px;
+  background-color: #fbcdd1;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.scoreSection h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.scoreSection ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.scoreSection ul li {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #3E4C59;
+}

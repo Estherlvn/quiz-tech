@@ -23,9 +23,12 @@
 
 .themeSelector {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: flex-start; /* Aligne les blocs à gauche */
+  flex-direction: row; /* Aligne les blocs horizontalement */
+  gap: 20px; /* Espace entre les blocs */
+  justify-content: flex-start; /* Aligne les blocs à gauche */
+  flex-wrap: wrap; /* Permet aux blocs de passer à la ligne suivante si l'espace est insuffisant */
+  margin-bottom: 80px;
+  margin-left: 30px;
 }
 
 .themeBlock {
@@ -35,18 +38,15 @@
   padding: 20px;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
-  width: 100%; /* S'assure que les blocs prennent toute la largeur disponible */
-}
-
-.themeBlock:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 200px; /* Définit une largeur fixe pour les blocs */
+  text-align: center; /* Centre le texte dans chaque bloc */
 }
 
 .themeBlock.selected {
   border-color: #50708A;
   background-color: #E0F7FA;
 }
+
 
 .scrollToTopButton {
   position: fixed;

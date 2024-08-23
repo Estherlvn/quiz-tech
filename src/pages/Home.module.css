@@ -7,55 +7,60 @@
 }
 
 .UpContainer {
-  position: absolute;
-  margin: 70px 0 0 38%;
-  width: 30%;
+  margin: 75px 0 0 35%;
+  width: 32%;
   position: relative; /* Ajoutez une position pour que le z-index fonctionne */
 }
 
 .home h1 {
-  color: #3E4C59;
+  font-size: 40px;
+  color: #273039;
   text-align: center;
   margin-bottom: 0; /* Réinitialisez les marges par défaut */
   padding-bottom: 10px; /* Ajoutez du padding pour espacer du bord */
 }
-
 .home h2 {
-  color: #3E4C59;
+  color: #273039;
   text-align: center;
-  margin: 0; /* Réinitialisez les marges par défaut */
-  padding-top: 10px; /* Ajoutez du padding pour espacer du bord */
+  margin: 0;
+  margin-right: 20px;;
+  padding-top: 10px;
+  min-height: 3em; /* Ajustez la hauteur pour correspondre à deux lignes de texte */
+  display: block; /* Assure que le h2 prend toute la largeur disponible */
+  white-space: normal; /* Permet les retours à la ligne */
+  word-break: break-word; /* Gère les retours à la ligne sur les mots longs */
 }
+
 
 .arbre {
   position: absolute;
-  width: 36%;
-  top: -75px; /* Enlever la marge en haut */
+  width: 38%;
+  top: -77px; /* Enlever la marge en haut */
   right: 0; /* Enlever la marge à droite */
   z-index: 4; /* Placez l'image en dessous des autres éléments */
 }
 
 .ellipseContainer {
     position: relative;
-    z-index: 2; /* Assurez-vous que l'image ellipse est au-dessus de home-bar */
-    margin: -150px 0 0 0; /* Déplacez l'ellipse vers le haut */
+    z-index: 1;
+    margin: -190px 0 0 0; /* Déplacez l'ellipse vers le haut */
     display: flex;
     justify-content: center;
   }
   
 .ellipse {
     margin-right: 61%;
-    width: 30%;
+    width: 32%;
     display: block;
   }  
 
 .avatar-homepage {
   position: absolute;
-  z-index: 4; /* Assurez-vous que l'image avatar-homepage est au-dessus de l'ellipse */
-  top: 43%; /* Ajustez cette valeur pour remonter l'image dans l'ellipse */
+  z-index: 3; /* Assurez-vous que l'image avatar-homepage est au-dessus de l'ellipse */
+  top: 45%; /* Ajustez cette valeur pour remonter l'image dans l'ellipse */
   left: 19%; /* Ajustez cette valeur pour centrer horizontalement */
   transform: translate(-50%, -50%); /* Centrez l'image dans l'ellipse */
-  width: 29%; /* Ajustez la taille de l'avatar selon vos besoins */
+  width: 30%; /* Ajustez la taille de l'avatar selon vos besoins */
   height: auto; /* Maintenez les proportions de l'image */
   box-shadow: (0 0 20px rgba(255, 255, 255, 0.7))
 }
@@ -65,31 +70,22 @@
   filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.7));
 }
 
-.home-bar {
-  width: 100%;
-  height: 30%;
-  position: absolute;
-  z-index: 3; /* Assurez-vous que l'image home-bar est au-dessus de l'arbre */
-  display: block;
-  top: 75%; /* Ajustez cette valeur pour positionner l'image juste en dessous de l'avatar-homepage */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajoute une ombre à l'image */
-}
 
 .searchAndButtonContainer {
     position: absolute;
-    z-index: 4;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 37%;
-    margin-top: -13%;
+    z-index:5;
+    margin-top: 50px;
   }
   
   .searchBar {
     background-color: white;
     display: flex;
     align-items: center;
-    border: none;
+    border: solid 1px;
+    border-color: rgb(185, 177, 166);
     border-radius: 20px;
     padding-left: 20px;
     margin-right: 15px; /* Espace entre la barre de recherche et le bouton */
@@ -105,7 +101,7 @@
   }
 
   .validationButton {
-    background: #FFC1C3;
+    background: #da84a4;
     border: none;
     padding: 10px;
     cursor: pointer;
@@ -115,14 +111,15 @@
   }
   
   .validationButton:hover {
-    background-color: #FBD7D5;
+    background-color: #e594a4;
   }
   
   .startQuizButton {
-    padding: 10px 10px;
-    background-color: #FFC1C3;
-    color: #3E4C59;
-    border: solid 1px #3E4C59 ;
+    min-width: 155px;
+    padding: 10px 20px;
+    background-color: #da84a4;
+    color: white;
+    border: none;
     border-radius: 20px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
     cursor: pointer;
@@ -130,7 +127,7 @@
   }
   
   .startQuizButton:hover {
-    background-color:#da84a4;
+    background-color:#e594a4;
     color: #fff;
   }
   

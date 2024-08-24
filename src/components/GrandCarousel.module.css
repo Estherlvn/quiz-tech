@@ -2,10 +2,13 @@
 .wrapper {
   width: 100%;
   height: auto;
-  max-width: 1100px; /* Largeur maximale du carousel */
+  max-width: 1200px; /* Largeur maximale du carousel */
   position: relative;
-  margin: 0 auto; /* Centre le carousel horizontalement */
+  display: flex;
+  align-items: center; /* Centre verticalement le contenu */
+  margin: 0 auto 80px auto;
 }
+
 
 .carousel {
   width: 100%;
@@ -13,7 +16,8 @@
   display: flex;
   align-items: center; /* Centre verticalement le contenu */
   overflow: hidden; /* Masque tout ce qui dépasse pour n'afficher que 4 cartes */
-  padding: 0 20px; /* Ajoute de l'espace à gauche et à droite pour le survol */
+  padding: 0 0px; /* Ajoute de l'espace à gauche et à droite pour le survol */
+  scroll-behavior: smooth; /* Ajoute un défilement fluide */
 }
 
 .carousel::-webkit-scrollbar {
@@ -22,37 +26,29 @@
 
 .prev,
 .next {
+  background-color: aliceblue;
+  border-radius: 2px;
   font-size: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: white;
-  border: none;
-  border-radius: 50%;
-  outline: 0;
   cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2; /* Assure que les boutons sont au-dessus du carousel */
-  width: 40px; /* Taille des flèches */
-  height: 40px; /* Taille des flèches */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour un meilleur contraste */
+  padding: 5px 10px;
+  position: absolute; /* Positionne les flèches de manière absolue */
+  top: 50%; /* Centre verticalement les flèches */
+  transform: translateY(-50%); /* Centre les flèches verticalement */
+  z-index: 2; /* Assure que les flèches sont au-dessus du carousel */
 }
 
 .prev {
-  left: -80px; /* Positionne la flèche à l'extérieur du carousel à gauche */
-  padding-left: 2px;
+  left: -60px; /* Positionne la flèche à l'extérieur du carousel à gauche */
 }
 
 .next {
-  right: -100px; /* Positionne la flèche à l'extérieur du carousel à droite */
-  padding-right: 2px;
+  right: -60px; /* Positionne la flèche à l'extérieur du carousel à droite */
 }
 
 .content {
+  width: 100%;
   display: flex;
-  gap: 30px; /* Espace entre les cartes */
+  gap: 40px; /* Espace entre les cartes */
   transition: transform 0.3s ease; /* Pour animer le déplacement des cartes */
   padding: 10px 10px; /* Ajoute un padding pour éviter que les cartes agrandies touchent les bords */
   overflow: visible; /* Permet aux cartes agrandies de ne pas être coupées */
@@ -60,10 +56,11 @@
 
 .card {
   background-color: #a9c1d0;
+  border: solid 1px;
   border-radius: 8px;
   text-align: center;
   padding: 20px;
-  flex: 0 0 20%; /* Chaque carte prend 25% de la largeur du conteneur pour afficher exactement 4 cartes */
+  flex: 0 0 19%; /* Chaque carte prend 25% de la largeur du conteneur pour afficher exactement 4 cartes */
   height: 250px; /* Hauteur fixe pour toutes les cartes */
   display: flex;
   flex-direction: column;
@@ -90,3 +87,4 @@
   font-weight: bold;
   color: #333;
 }
+

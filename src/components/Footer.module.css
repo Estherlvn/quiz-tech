@@ -1,57 +1,65 @@
 .footer {
-    background-color: #50708A;
-    color: white;
-    padding: 20px 0;
-  }
-  
-  .container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-  }
-  
-  .logoContainer {
-    flex: 0 0 auto;
-    margin-right: 40%; /* Ajoutez un espace entre le logo et les colonnes */
-  }
-  
-  .logo {
-    height: 100px; /* Ajustez la taille du logo selon vos besoins */
-    border-radius: 50%;
-  }
-  
-  .column {
-    flex: 1;
-    min-width: 150px;
-    padding: 10px;
-  }
-  
-  .column h4 {
-    margin: 60px 0 0 0;
-  }
-  
-  .column ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .column li {
-    margin-bottom: 5px;
-  }
-  
-  .horizontalLine {
-    width: 50%;
-    border: 0;
-    height: 1px;
-    background: white;
-    margin: 5% 25% 5%;
-  }
-  
-  .legalMentions {
-    text-align: center;
-    font-size: 14px;
-  }
-  
+  background-color: #50708A;
+  color: white;
+  padding: 20px 0;
+  position: relative; /* Nécessaire pour positionner l'image du livre de manière absolue */
+  width: 100%;
+  height: auto;
+  padding-bottom: 20px;
+}
+
+.container {
+  display: flex;
+  align-items: flex-start; /* Aligne tous les éléments en haut du conteneur */
+  margin: 0 auto;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-top: 20px; /* Ajoute un espace en haut pour éviter que les éléments soient trop proches du bord supérieur */
+  position: relative; /* Assure que les éléments restent dans leur position relative */
+}
+
+.livre {
+  position: absolute; /* Positionne l'image de manière absolue par rapport au footer */
+  left: 0px; /* Ajuste la position horizontale de l'image du livre */
+  max-width: 145px;
+  z-index: 1; /* Place l'image en dessous des autres éléments pour qu'elle ne les recouvre pas */
+}
+
+.logoContainer {
+  flex: 0 0 auto; /* Empêche le logo de s'étirer */
+  margin-right: 20%; /* Espace entre le logo et les colonnes */
+}
+
+.logo {
+  height: 120px; /* Ajuste la taille du logo selon vos besoins */
+  border-radius: 50%;
+  margin-left: 220px;
+}
+
+
+.column2, .column1 {
+  margin: 30px 90px 90px 0;
+}
+
+.column1 ul, .column2 ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.column1 li, .column2 li {
+  margin-bottom: 8px;
+}
+
+.horizontalLine {
+  width: 50%; /* Ajuste la largeur pour qu'elle s'adapte au contenu */
+  border: 0;
+  height: 1px;
+  background: white;
+  margin: 50px auto; /* Centrer la ligne et ajouter un espace autour */
+}
+
+.legalMentions {
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 20px;
+}

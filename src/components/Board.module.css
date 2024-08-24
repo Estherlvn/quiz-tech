@@ -1,14 +1,17 @@
 /* src/components/Board.module.css */
 .boardContainer {
   padding: 20px;
-  background-color: #f7f2ee;
+  background-color: #fbcdd1;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+  margin: 10% 20% 10% 20%;
 }
 
 .scoreSection {
-  margin-top: 20px;
-  background-color: #fbcdd1;
+  margin: 20px;
+  background-color:#f7f2ee;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

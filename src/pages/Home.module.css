@@ -19,6 +19,7 @@
   margin-bottom: 0; /* Réinitialisez les marges par défaut */
   padding-bottom: 10px; /* Ajoutez du padding pour espacer du bord */
 }
+
 .home h2 {
   color: #273039;
   text-align: center;
@@ -43,14 +44,14 @@
 .ellipseContainer {
     position: relative;
     z-index: 1;
-    margin: -170px 0 0 0; /* Déplacez l'ellipse vers le haut */
+    margin: -155px 0 0 0; /* Déplacez l'ellipse vers le haut */
     display: flex;
     justify-content: center;
   }
   
 .ellipse {
     margin-right: 61%;
-    width: 32%;
+    width: 30%;
     display: block;
   }  
 
@@ -77,10 +78,11 @@
     justify-content: center;
     align-items: center;
     z-index:5;
-    margin-top: 50px;
+    margin-top: 80px;
   }
   
   .searchBar {
+    border: solid 1px;
     background-color: white;
     display: flex;
     align-items: center;
@@ -93,6 +95,7 @@
   }
   
   .searchBar input {
+    font-size: 18px;
     background-color: #ffffff;
     border-radius: 30px;
     border: none;
@@ -104,14 +107,16 @@
     border-radius: 10px;
     border: none;
     background-color: #ffffff;
-    color: #da84a4;
+    color: #90727d;
     font-size: 25px;
     cursor: pointer;
     margin: 3px;
   }
   
   .startQuizButton {
-    min-width: 155px;
+    font-size: 17px;
+    border: solid 1px;
+    min-width: 190px;
     padding: 10px 20px;
     background-color: #da84a4;
     color: white;

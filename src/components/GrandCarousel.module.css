@@ -1,79 +1,92 @@
-.carouselContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    position: relative;
-    margin: 20px auto;
-    padding: 10px 0;
-  }
-  
-  .arrowLeft,
-  .arrowRight {
-    cursor: pointer;
-    font-size: 40px;
-    color: #333;
-    user-select: none;
-    padding: 10px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
 
-  .carouselTrack {
-    display: flex;
-    gap: 30px;
-    overflow-x: hidden;
-    width: 80%;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .carouselItem {
-    background-color: #e5eff5;
-    border-radius: 20px;
-    text-align: center;
-    padding: 20px;
-    width: 250px;
-    height: 280px;
-    flex: 0 0 auto;
-    position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    margin: 10px 0 10px 0;
-  }
-  
-  .carouselItem:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  .carouselImage {
-    margin-top: 10px;
-    width: 70%;
-    height: auto;
-  }
-  
-  .playButton {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: white;
-    border: 2px solid #333;
-    border-radius: 20px;
-    padding: 8px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s; /* Supprime la transition transform */
-  }
-  
-  .playButton:hover {
-    background-color: #f3f3f3; /* Légère variation de couleur au survol */
-    /* transform: none; Supprimé car non nécessaire */
-  }
-  
+.wrapper {
+  width: 100%;
+  height: auto;
+  max-width: 1100px; /* Largeur maximale du carousel */
+  position: relative;
+  margin: 0 auto; /* Centre le carousel horizontalement */
+}
+
+.carousel {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center; /* Centre verticalement le contenu */
+  overflow: hidden; /* Masque tout ce qui dépasse pour n'afficher que 4 cartes */
+  padding: 0 20px; /* Ajoute de l'espace à gauche et à droite pour le survol */
+}
+
+.carousel::-webkit-scrollbar {
+  display: none; /* Cache la scrollbar pour WebKit */
+}
+
+.prev,
+.next {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  outline: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2; /* Assure que les boutons sont au-dessus du carousel */
+  width: 40px; /* Taille des flèches */
+  height: 40px; /* Taille des flèches */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour un meilleur contraste */
+}
+
+.prev {
+  left: -80px; /* Positionne la flèche à l'extérieur du carousel à gauche */
+  padding-left: 2px;
+}
+
+.next {
+  right: -100px; /* Positionne la flèche à l'extérieur du carousel à droite */
+  padding-right: 2px;
+}
+
+.content {
+  display: flex;
+  gap: 30px; /* Espace entre les cartes */
+  transition: transform 0.3s ease; /* Pour animer le déplacement des cartes */
+  padding: 10px 10px; /* Ajoute un padding pour éviter que les cartes agrandies touchent les bords */
+  overflow: visible; /* Permet aux cartes agrandies de ne pas être coupées */
+}
+
+.card {
+  background-color: #a9c1d0;
+  border-radius: 8px;
+  text-align: center;
+  padding: 20px;
+  flex: 0 0 20%; /* Chaque carte prend 25% de la largeur du conteneur pour afficher exactement 4 cartes */
+  height: 250px; /* Hauteur fixe pour toutes les cartes */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, z-index 0.3s ease; /* Ajoute une transition sur z-index pour éviter des sauts */
+  z-index: 1; /* Niveau de base pour toutes les cartes */
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 2; /* Met en avant la carte survolée */
+}
+
+.image {
+  width: 50%;
+  height: auto;
+}
+
+.title {
+  margin-top: 30px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+}

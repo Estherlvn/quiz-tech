@@ -43,7 +43,7 @@
 .ellipseContainer {
     position: relative;
     z-index: 1;
-    margin: -190px 0 0 0; /* Déplacez l'ellipse vers le haut */
+    margin: -170px 0 0 0; /* Déplacez l'ellipse vers le haut */
     display: flex;
     justify-content: center;
   }

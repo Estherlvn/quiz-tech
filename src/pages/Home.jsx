@@ -7,6 +7,7 @@ import styles from './Home.module.css';
 import PetitCarousel from '../components/PetitCarousel'; // Import du composant PetitCarousel
 import AutoplayCarousel from '../components/AutoplayCarousel';
 import GrandCarousel from '../components/GrandCarousel';
+import ModuleBlock from '../components/ModuleBlock';
 
 const Home = () => {
   const navigate = useNavigate(); // Utilisez useNavigate pour la redirection
@@ -63,6 +64,8 @@ const Home = () => {
       <PetitCarousel />
 
       <GrandCarousel />
+
+      <ModuleBlock />
 
     </div>
   );

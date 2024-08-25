@@ -20,9 +20,9 @@ const GrandCarousel = () => {
     { imgSrc: jsImg, title: 'JavaScript' },
     { imgSrc: reactImg, title: 'React' },
     { imgSrc: pythonImg, title: 'Python' },
+    { imgSrc: bootstrapImg, title: 'Bootstrap' },
     { imgSrc: htmlImg, title: 'HTML' },
     { imgSrc: cssImg, title: 'CSS' },
-    { imgSrc: bootstrapImg, title: 'Bootstrap' },
   ];
 
   useEffect(() => {
@@ -76,6 +76,8 @@ const GrandCarousel = () => {
   };
 
   return (
+    <div className={styles.carouselHeader}>
+          <h2 className={styles.header}>Aller plus loin</h2> 
     <div className={styles.wrapper}>
       {showPrev && (
         <button className={styles.prev} onClick={handlePrevClick}>
@@ -98,6 +100,7 @@ const GrandCarousel = () => {
           &gt;
         </button>
       )}
+    </div>
     </div>
   );
 };

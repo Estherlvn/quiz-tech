@@ -19,11 +19,7 @@ const QuizMenu = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 200) { // Affiche la flèche lorsque l'utilisateur défile de plus de 200px
-        setShowScrollToTop(true);
-      } else {
-        setShowScrollToTop(false);
-      }
+      setShowScrollToTop(window.scrollY > 200);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -46,37 +42,22 @@ const QuizMenu = () => {
       <div className={styles.themeContainer}>
         <h1 className={styles.themeTitle}>Choix du thème</h1>
         <div className={styles.themeSelector}>
-          <div
-            className={`${styles.themeBlock} ${selectedTheme === 'développementweb' ? styles.selected : ''}`}
-            onClick={() => handleThemeChange('développementweb')}
-          >
-            Développement Web
-          </div>
-          <div
-            className={`${styles.themeBlock} ${selectedTheme === 'uxui' ? styles.selected : ''}`}
-            onClick={() => handleThemeChange('uxui')}
-          >
-            UX UI
-          </div>
-          <div
-            className={`${styles.themeBlock} ${selectedTheme === 'css' ? styles.selected : ''}`}
-            onClick={() => handleThemeChange('css')}
-          >
-            CSS
-          </div>
-          <div
-            className={`${styles.themeBlock} ${selectedTheme === 'html' ? styles.selected : ''}`}
-            onClick={() => handleThemeChange('html')}
-          >
-            HTML
-          </div>
+          {['développementweb', 'uxui', 'css', 'html', 'react'].map((theme, index) => (
+            <div
+              key={theme}
+              className={`${styles.themeBlock} ${selectedTheme === theme ? styles.selected : ''}`}
+              onClick={() => handleThemeChange(theme)}
+            >
+              {theme.charAt(0).toUpperCase() + theme.slice(1).replace('web', ' Web').replace('uxui', 'UX UI')}
+            </div>
+          ))}
         </div>
       </div>
       <div ref={quizBoxRef}>
         <QuizBox selectedTheme={selectedTheme} />
       </div>
 
-      {showScrollToTop && ( // Affiche la flèche seulement si showScrollToTop est true
+      {showScrollToTop && (
         <div className={styles.scrollToTopButton} onClick={scrollToTop}>
           <img src={arrow} alt="Remonter en haut" />
         </div>

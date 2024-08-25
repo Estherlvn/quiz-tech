@@ -50,7 +50,7 @@
   display: flex;
   gap: 40px; /* Espace entre les cartes */
   transition: transform 0.3s ease; /* Pour animer le déplacement des cartes */
-  padding: 10px 10px; /* Ajoute un padding pour éviter que les cartes agrandies touchent les bords */
+  padding: 20px 20px; /* Ajoute un padding pour éviter que les cartes agrandies touchent les bords */
   overflow: visible; /* Permet aux cartes agrandies de ne pas être coupées */
 }
 
@@ -88,3 +88,17 @@
   color: #333;
 }
 
+.playButton {
+  margin-top: 20px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 10px 15px; /* Augmente le padding pour rendre le bouton plus grand */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s ease; /* Ajoute une transition pour le changement de couleur et le survol */
+}
+
+.playButton:hover {
+  background-color: #ccc;
+  transform: scale(1.05); /* Agrandit légèrement le bouton au survol */
+}

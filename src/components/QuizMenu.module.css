@@ -23,10 +23,10 @@
 
 .themeSelector {
   display: flex;
-  flex-direction: row; /* Aligne les blocs horizontalement */
+  flex-wrap: wrap; /* Permet aux blocs de passer à la ligne suivante si l'espace est insuffisant */
   gap: 20px; /* Espace entre les blocs */
   justify-content: flex-start; /* Aligne les blocs à gauche */
-  flex-wrap: wrap; /* Permet aux blocs de passer à la ligne suivante si l'espace est insuffisant */
+  max-width: 860px; /* Limite la largeur totale à 4 blocs de 200px plus les gaps */
   margin-bottom: 80px;
   margin-left: 30px;
 }
@@ -40,13 +40,13 @@
   transition: transform 0.3s, box-shadow 0.3s;
   width: 200px; /* Définit une largeur fixe pour les blocs */
   text-align: center; /* Centre le texte dans chaque bloc */
+  flex: 0 0 calc(25% - 20px); /* Assure que chaque bloc prend 25% de la largeur moins le gap */
 }
 
 .themeBlock.selected {
   border-color: #50708A;
   background-color: #E0F7FA;
 }
-
 
 .scrollToTopButton {
   position: fixed;

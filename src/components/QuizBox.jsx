@@ -6,6 +6,7 @@ import développementweb from '../data/développementweb';
 import uxui from '../data/uxui';
 import css from '../data/css';
 import html from '../data/html';
+import react from '../data/react'; // Import des questions React
 
 const QuizBox = ({ selectedTheme }) => {
   const questions = selectedTheme === 'uxui'
@@ -14,7 +15,9 @@ const QuizBox = ({ selectedTheme }) => {
       ? css
       : selectedTheme === 'html'
         ? html
-        : développementweb; // Sélectionne les questions en fonction du thème
+        : selectedTheme === 'react'
+          ? react
+          : développementweb; // Sélectionne les questions en fonction du thème
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
@@ -38,7 +41,7 @@ const QuizBox = ({ selectedTheme }) => {
       } else {
         setShowResult(true);
       }
-      setSelectedAnswer(null); // Reset selected answer for the next question
+      setSelectedAnswer(null); // Réinitialise la réponse sélectionnée pour la question suivante
     }
   };
 
@@ -100,6 +103,7 @@ const QuizBox = ({ selectedTheme }) => {
               {selectedTheme === 'uxui' ? 'UX UI' :
               selectedTheme === 'css' ? 'CSS' : 
               selectedTheme === 'html' ? 'HTML' : 
+              selectedTheme === 'react' ? 'React' : 
               'Développement Web'}
             </h1>
             <h2 className={styles.questionTitle}>Question {currentQuestionIndex + 1}</h2>

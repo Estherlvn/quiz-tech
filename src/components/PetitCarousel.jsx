@@ -33,6 +33,9 @@ const PetitCarousel = () => {
   };
 
   return (
+    <div className={styles.carouselHeader}>
+          <h2 className={styles.header}>Pour débuter</h2> 
+    
     <div className={styles.carouselContainer}>
       <div className={styles.arrowLeft} onClick={() => handleScroll('left')}>
         {"<"}
@@ -54,6 +57,7 @@ const PetitCarousel = () => {
       <div className={styles.arrowRight} onClick={() => handleScroll('right')}>
         {">"}
       </div>
+    </div>
     </div>
   );
 };

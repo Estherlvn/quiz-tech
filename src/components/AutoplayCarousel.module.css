@@ -3,22 +3,21 @@
   position: relative;
   z-index: 10;
   max-height: 90px;
-  width: 100%;
   height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: -100px;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
   padding: 16px;
   background-color: rgba(252, 248, 244, 0.8);
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 .carouselTrack {
+  margin-left: 40px;
   display: flex;
   gap: 45px;
-  margin-left: 45px;
 }
 
 

@@ -17,7 +17,7 @@ root.render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
-          <Route path="quiz" element={<Quiz />} /> {/* Utiliser le composant Quiz */}
+          <Route path="quiz" element={<Quiz />} /> 
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="support" element={<Support />} />
         </Route>

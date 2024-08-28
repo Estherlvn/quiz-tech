@@ -1,4 +1,3 @@
-// Quiz.jsx
 import React from 'react';
 import QuizMenu from '../components/QuizMenu';
 import styles from './Quiz.module.css';

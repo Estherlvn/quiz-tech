@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import Result from './Result';
-import QuizResultHandler from './QuizResultHandler'; // Import du composant
+import QuizResultHandler from './QuizResultHandler';
 import styles from './QuizBox.module.css';
 import développementweb from '../data/développementweb';
 import uxui from '../data/uxui';

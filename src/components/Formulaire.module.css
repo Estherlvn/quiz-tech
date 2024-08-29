@@ -1,0 +1,69 @@
+/* Formulaire.module.css */
+.formContainer {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    margin-bottom: 30px;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formGroup {
+    display: flex; /* Utilisation de Flexbox pour aligner les labels et inputs */
+    align-items: center; /* Aligne verticalement les labels et les inputs */
+    margin-bottom: 15px;
+  }
+  
+  .formGroup label {
+    flex: 0 0 100px; /* Donne une largeur fixe aux labels pour alignement */
+    margin-bottom: 0; /* Supprime la marge inférieure par défaut des labels */
+    font-weight: bold;
+  }
+  
+  .formGroup input,
+  .formGroup textarea {
+    flex: 1; /* Permet aux inputs de prendre toute la largeur disponible */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  
+  /* Nouveau conteneur pour centrer le bouton de soumission */
+  .submitContainer {
+    display: flex;
+    justify-content: center; /* Centre le bouton horizontalement */
+  }
+  
+  .submitButton {
+    margin-top: 10px;
+    width: 30%;
+    padding: 10px;
+    background-color: #50708A;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  
+  .submitButton:hover {
+    background-color: #405a6b;
+  }
+  
+  .confirmation {
+    color: green;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  

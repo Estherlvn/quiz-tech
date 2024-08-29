@@ -1,0 +1,19 @@
+/* Support.module.css */
+.supportPage {
+    padding: 40px;
+    background-color: #fdf5e6;
+    font-family: 'JetBrains Mono', monospace;
+    min-height: 100vh; /* Pour s'assurer que la page occupe tout l'écran */
+  }
+  
+  h1 {
+    text-align: left;
+    color: #3E4C59;
+  }
+  
+  p {
+    text-align: left;
+    margin-bottom: 40px;
+    margin-left: 20px;
+  }
+  

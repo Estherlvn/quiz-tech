@@ -10,10 +10,7 @@ import pythonImg from '../assets/PYTHON.png';
 const GrandCarousel = () => {
   const carouselRef = useRef(null);
   const contentRef = useRef(null);
-  const [width, setWidth] = useState(0);
   const [cardWidth, setCardWidth] = useState(0);
-  const [showPrev, setShowPrev] = useState(false);
-  const [showNext, setShowNext] = useState(true);
 
   // Images data
   const items = [
@@ -27,9 +24,6 @@ const GrandCarousel = () => {
 
   useEffect(() => {
     const updateWidth = () => {
-      setWidth(carouselRef.current.offsetWidth);
-
-      // Définir la largeur d'une seule carte
       if (contentRef.current && contentRef.current.firstChild) {
         setCardWidth(contentRef.current.firstChild.offsetWidth + 30); // Ajoutez la largeur de l'écart (gap)
       }
@@ -41,66 +35,35 @@ const GrandCarousel = () => {
     return () => window.removeEventListener('resize', updateWidth);
   }, []);
 
-  useEffect(() => {
-    const carouselNode = carouselRef.current; // Capture la valeur actuelle de ref
-
-    const checkScrollPosition = () => {
-      if (carouselNode && contentRef.current) {
-        const atStart = carouselNode.scrollLeft === 0;
-        const atEnd =
-          contentRef.current.scrollWidth <=
-          width + carouselNode.scrollLeft;
-        setShowPrev(!atStart);
-        setShowNext(!atEnd);
-      }
-    };
-
-    checkScrollPosition();
-    carouselNode.addEventListener('scroll', checkScrollPosition);
-
-    return () => {
-      carouselNode.removeEventListener('scroll', checkScrollPosition);
-    };
-  }, [width]);
-
-  const handleNextClick = () => {
+  const handleScroll = (direction) => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy(cardWidth, 0); // Défile de la largeur d'une carte
-    }
-  };
-
-  const handlePrevClick = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy(-cardWidth, 0); // Défile de la largeur d'une carte
+      const scrollAmount = direction === 'next' ? cardWidth : -cardWidth;
+      carouselRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
   };
 
   return (
     <div className={styles.carouselHeader}>
-          <h2 className={styles.header}>Aller plus loin</h2> 
-    <div className={styles.wrapper}>
-      {showPrev && (
-        <button className={styles.prev} onClick={handlePrevClick}>
+      <h2 className={styles.header}>Aller plus loin</h2>
+      <div className={styles.wrapper}>
+        <button className={styles.prev} onClick={() => handleScroll('prev')}>
           &lt;
         </button>
-      )}
-      <div ref={carouselRef} className={styles.carousel}>
-        <div ref={contentRef} className={styles.content}>
-          {items.map((item, index) => (
-            <div key={index} className={styles.card}>
-              <img src={item.imgSrc} alt={item.title} className={styles.image} />
-              <div className={styles.title}>{item.title}</div>
-              <button className={styles.playButton}>Jouer</button>
-            </div>
-          ))}
+        <div ref={carouselRef} className={styles.carousel}>
+          <div ref={contentRef} className={styles.content}>
+            {items.map((item, index) => (
+              <div key={index} className={styles.card}>
+                <img src={item.imgSrc} alt={item.title} className={styles.image} />
+                <div className={styles.title}>{item.title}</div>
+                <button className={styles.playButton}>Jouer</button>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-      {showNext && (
-        <button className={styles.next} onClick={handleNextClick}>
+        <button className={styles.next} onClick={() => handleScroll('next')}>
           &gt;
         </button>
-      )}
-    </div>
+      </div>
     </div>
   );
 };

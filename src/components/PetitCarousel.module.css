@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
 /* Conteneur principal du carousel */
 .carouselContainer {
   height: auto;
@@ -7,7 +9,7 @@
   align-items: center; /* Centre verticalement le contenu */
   justify-content: center; /* Centre le carousel avec les flèches */
   margin: 0 auto 80px auto; /* Centre horizontalement le carousel dans la page */
-  overflow: visible; /* Permet de voir les cartes qui dépassent lors du survol */
+  overflow: hidden; /* Masque tout ce qui dépasse du conteneur principal */
   padding: 0; /* Enlève tout le padding */
 }
 
@@ -23,30 +25,20 @@
 
 /* Flèches de navigation */
 .arrowLeft, .arrowRight {
-  background-color: #fedbdf;
-  border: solid 1px;
-  border-radius: 2px;
-  font-size: 30px;
   cursor: pointer;
-  padding: 10px;
-  position: absolute; /* Position absolue pour les flèches */
-  top: 50%; /* Centre verticalement les flèches */
+  font-size: 40px;
+  cursor: pointer;
+  padding: 20px;
+  position: relative; /* Position absolue pour les flèches */
+  margin-top: 70px;
   transform: translateY(-50%); /* Centre les flèches verticalement */
   z-index: 15; /* Assure que les flèches sont au-dessus du carousel et des cartes */
-}
-
-.arrowLeft {
-  left: -40px; /* Positionne la flèche à gauche, légèrement en dehors du carousel */
-}
-
-.arrowRight {
-  right: -40px; /* Positionne la flèche à droite, légèrement en dehors du carousel */
 }
 
 /* Conteneur des cartes du carousel */
 .carousel {
   display: flex;
-  gap: 23px; /* Espace entre les cartes pour permettre l'agrandissement */
+  gap: 25px; /* Espace entre les cartes pour permettre l'agrandissement */
   overflow: hidden; /* Masque les cartes qui dépassent horizontalement */
   max-width: 100%; /* Utilise toute la largeur disponible pour afficher les cartes */
   scroll-behavior: smooth; /* Ajoute un défilement fluide */
@@ -55,7 +47,7 @@
 
 /* Style de chaque carte du carousel */
 .card {
-  background-color: #f5c6cb;
+  background-color: #fcc7cc;
   border: solid 1px;
   padding: 20px; /* Ajuste le padding interne des blocs */
   border-radius: 10px;
@@ -82,22 +74,21 @@
   z-index: 10; /* Met en avant la carte survolée pour éviter qu'elle ne soit masquée par d'autres cartes */
 }
 
-/* Contenu de bloc vide */
-.emptyBlockContent {
-  color: #888; /* Couleur de texte plus claire pour les blocs vides */
-  font-size: 16px;
-  margin-top: 10px;
-}
-
-/* Titre des quiz */
 .quizTitle {
+  padding: 20px 10px 20px 10px;
   font-size: 20px; /* Augmente la taille de la police du titre */
   font-weight: bold;
-  margin-bottom: 15px; /* Augmente la marge inférieure pour plus d'espacement */
+  margin-bottom: 12px; /* Augmente la marge inférieure pour plus d'espacement */
+  
+  /* Ajout des propriétés pour masquer le texte en débordement */
+  white-space: nowrap; /* Empêche le retour à la ligne */
+  overflow: hidden; /* Masque le texte qui déborde */
+  text-overflow: ellipsis; /* Ajoute des points de suspension (...) à la fin du texte si nécessaire */
+  max-width: 100%; /* Assure que le texte ne dépasse pas la largeur du conteneur */
 }
 
-/* Bouton de lecture de quiz */
 .playButton {
+  font-family: 'JetBrains Mono', monospace;
   margin-top: 20px;
   background-color: #fff;
   border: 1px solid #000;
@@ -110,4 +101,112 @@
 .playButton:hover {
   background-color: #ccc;
   transform: scale(1.05); /* Agrandit légèrement le bouton au survol */
+}
+
+/* Media query pour les écrans inférieurs à 1040px */
+@media screen and (max-width: 1040px) {
+  .carouselContainer {
+    max-width: 90%; /* Réduit la largeur maximale du conteneur du carousel */
+  }
+
+  .card {
+    flex: 0 0 calc(27% - 20px); /* Chaque carte prend 33.33% de la largeur du conteneur moins la taille du gap */
+  }
+
+  .arrowLeft, .arrowRight {
+    font-size: 30px; /* Réduit la taille des flèches */
+    padding: 15px; /* Réduit le padding des flèches */
+  }
+}
+
+
+@media screen and (max-width: 890px) {
+  .carouselContainer {
+    max-width: 90%; /* Réduit la largeur maximale du conteneur du carousel */
+  }
+
+  .card {
+    flex: 0 0 calc(26% - 20px); /* Chaque carte prend 33.33% de la largeur du conteneur moins la taille du gap */
+  }
+
+  .arrowLeft, .arrowRight {
+    font-size: 30px; /* Réduit la taille des flèches */
+    padding: 15px; /* Réduit le padding des flèches */
+  }
+}
+
+
+@media screen and (max-width: 785px) {
+  .carouselContainer {
+    max-width: 90%; /* Réduit la largeur maximale du conteneur du carousel */
+  }
+
+  .card {
+    flex: 0 0 calc(25% - 20px); /* Chaque carte prend 33.33% de la largeur du conteneur moins la taille du gap */
+  }
+
+  .arrowLeft, .arrowRight {
+    font-size: 30px; /* Réduit la taille des flèches */
+    padding: 15px; /* Réduit le padding des flèches */
+  }
+}
+
+@media screen and (max-width: 705px) {
+  .carouselContainer {
+    max-width: 90%; /* Réduit la largeur maximale du conteneur du carousel */
+  }
+
+  .card {
+    flex: 0 0 calc(24% - 30px); /* Chaque carte prend 33.33% de la largeur du conteneur moins la taille du gap */
+  }
+
+  .arrowLeft, .arrowRight {
+    font-size: 30px; /* Réduit la taille des flèches */
+    padding: 15px; /* Réduit le padding des flèches */
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .carouselContainer {
+    max-width: 90%; /* Réduit la largeur maximale du conteneur du carousel */
+  }
+
+  .card {
+    flex: 0 0 calc(39% - 30px); /* Chaque carte prend 33.33% de la largeur du conteneur moins la taille du gap */
+  }
+
+  .arrowLeft, .arrowRight {
+    font-size: 30px; /* Réduit la taille des flèches */
+    padding: 15px; /* Réduit le padding des flèches */
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .carouselContainer {
+    max-width: 90%; /* Réduit la largeur maximale du conteneur du carousel */
+  }
+
+  .card {
+    flex: 0 0 calc(35% - 30px); /* Chaque carte prend 33.33% de la largeur du conteneur moins la taille du gap */
+  }
+
+  .arrowLeft, .arrowRight {
+    font-size: 30px; /* Réduit la taille des flèches */
+    padding: 15px; /* Réduit le padding des flèches */
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .carouselContainer {
+    max-width: 90%; /* Réduit la largeur maximale du conteneur du carousel */
+  }
+
+  .card {
+    flex: 0 0 calc(15% - 30px); /* Chaque carte prend 33.33% de la largeur du conteneur moins la taille du gap */
+  }
+
+  .arrowLeft, .arrowRight {
+    font-size: 30px; /* Réduit la taille des flèches */
+    padding: 15px; /* Réduit le padding des flèches */
+  }
 }

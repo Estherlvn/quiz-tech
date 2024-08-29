@@ -1,3 +1,4 @@
+/* Style global du footer */
 .footer {
   background-color: #50708A;
   color: white;
@@ -8,6 +9,7 @@
   padding-bottom: 20px;
 }
 
+/* Conteneur principal du footer */
 .container {
   display: flex;
   align-items: flex-start; /* Aligne tous les éléments en haut du conteneur */
@@ -18,6 +20,7 @@
   position: relative; /* Assure que les éléments restent dans leur position relative */
 }
 
+/* Image du livre */
 .livre {
   position: absolute; /* Positionne l'image de manière absolue par rapport au footer */
   left: 0px; /* Ajuste la position horizontale de l'image du livre */
@@ -25,6 +28,7 @@
   z-index: 1; /* Place l'image en dessous des autres éléments pour qu'elle ne les recouvre pas */
 }
 
+/* Conteneur du logo */
 .logoContainer {
   flex: 0 0 auto; /* Empêche le logo de s'étirer */
   margin-right: 20%; /* Espace entre le logo et les colonnes */
@@ -35,7 +39,6 @@
   border-radius: 50%;
   margin-left: 220px;
 }
-
 
 .column2, .column1 {
   margin: 30px 90px 90px 0;
@@ -55,11 +58,199 @@
   border: 0;
   height: 1px;
   background: white;
-  margin: 50px auto; /* Centrer la ligne et ajouter un espace autour */
 }
 
 .legalMentions {
   text-align: center;
   font-size: 15px;
-  margin-bottom: 20px;
+  margin: 60px 0 0px 35%;
 }
+
+
+@media screen and (max-width: 1030px) {
+/* Conteneur du logo */
+.logoContainer {
+  flex: 0 0 auto; /* Empêche le logo de s'étirer */
+  margin-right: 10%; /* Espace entre le logo et les colonnes */
+}
+
+.logo {
+  height: 100px; /* Ajuste la taille du logo selon vos besoins */
+  border-radius: 50%;
+  margin-left: 220px;
+}
+}
+
+@media screen and (max-width: 900px) {
+  /* Conteneur du logo */
+  .logoContainer {
+    flex: 0 0 auto; /* Empêche le logo de s'étirer */
+    margin-right: 10%; /* Espace entre le logo et les colonnes */
+  }
+  
+  .logo {
+    height: 80px; /* Ajuste la taille du logo selon vos besoins */
+    border-radius: 50%;
+    margin-left: 200px;
+  }
+
+  .livre {
+    max-width: 140px;
+  }
+
+  .column2, .column1 {
+    margin: 30px 80px 90px 0;
+  }
+
+  .column1 ul, .column2 ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 15px;
+  }
+
+
+  .legalMentions {
+    text-align: center;
+    font-size: 13px;
+    margin: 60px 0 0px 30%;
+  }
+
+  }
+
+  @media screen and (max-width: 840px) {
+    /* Conteneur du logo */
+    .logoContainer {
+      flex: 0 0 auto; /* Empêche le logo de s'étirer */
+      margin-right: 10%; /* Espace entre le logo et les colonnes */
+    }
+    
+    .logo {
+      height: 80px; /* Ajuste la taille du logo selon vos besoins */
+      border-radius: 50%;
+      margin-left: 150px;
+    }
+  
+    .livre {
+      max-width: 130px;
+    }
+  
+    .column1 ul, .column2 ul {
+      list-style-type: none;
+      padding: 0;
+      font-size: 14px;
+    }
+  
+    .horizontalLine {
+      width: 50%; /* Ajuste la largeur pour qu'elle s'adapte au contenu */
+    }
+
+    .legalMentions {
+      text-align: center;
+      font-size: 12px;
+      margin: 60px 0 0px 30%;
+    }
+  
+    }
+
+    @media screen and (max-width: 840px) {
+      /* Conteneur du logo */
+      .logoContainer {
+        flex: 0 0 auto; /* Empêche le logo de s'étirer */
+        margin-right: 10%; /* Espace entre le logo et les colonnes */
+      }
+      
+      .logo {
+        height: 80px; /* Ajuste la taille du logo selon vos besoins */
+        border-radius: 50%;
+        margin-left: 150px;
+      }
+    
+      .livre {
+        max-width: 130px;
+      }
+    
+      .column1 ul, .column2 ul {
+        list-style-type: none;
+        padding: 0;
+        font-size: 14px;
+      }
+    
+      .horizontalLine {
+        width: 50%; /* Ajuste la largeur pour qu'elle s'adapte au contenu */
+      }
+  
+      .legalMentions {
+        text-align: center;
+        font-size: 12px;
+        margin: 60px 0 0px 30%;
+      }
+    
+      }@media screen and (max-width: 740px) {
+        /* Conteneur du logo */
+        .logoContainer {
+          flex: 0 0 auto; /* Empêche le logo de s'étirer */
+          margin-right: 8%; /* Espace entre le logo et les colonnes */
+        }
+        
+        .logo {
+          height: 70px; /* Ajuste la taille du logo selon vos besoins */
+          border-radius: 50%;
+          margin-left: 120px;
+        }
+      
+        .livre {
+          max-width: 100px;
+        }
+      
+        .column1 ul, .column2 ul {
+          list-style-type: none;
+          padding: 0;
+          font-size: 14px;
+        }
+      
+        .horizontalLine {
+          width: 50%; /* Ajuste la largeur pour qu'elle s'adapte au contenu */
+        }
+    
+        .legalMentions {
+          text-align: center;
+          font-size: 12px;
+          margin: 60px 0 0px 30%;
+        }
+      
+        }
+
+      @media screen and (max-width: 370px) {
+    /* Conteneur du logo */
+    .logoContainer {
+      flex: 0 0 auto; /* Empêche le logo de s'étirer */
+      margin-right: 10%; /* Espace entre le logo et les colonnes */
+    }
+    
+    .logo {
+      height: 80px; /* Ajuste la taille du logo selon vos besoins */
+      border-radius: 50%;
+      margin-left: 150px;
+    }
+  
+    .livre {
+      max-width: 130px;
+    }
+  
+    .column1 ul, .column2 ul {
+      list-style-type: none;
+      padding: 0;
+      font-size: 14px;
+    }
+  
+    .horizontalLine {
+      width: 50%; /* Ajuste la largeur pour qu'elle s'adapte au contenu */
+    }
+
+    .legalMentions {
+      text-align: center;
+      font-size: 12px;
+      margin: 60px 0 0px 30%;
+    }
+  
+    }

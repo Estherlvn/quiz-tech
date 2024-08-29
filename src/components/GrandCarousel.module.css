@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
 
 .wrapper {
   width: 100%;
   height: auto;
-  max-width: 1200px; /* Largeur maximale du carousel */
+  max-width: 1180px; /* Largeur maximale du carousel */
   position: relative;
   display: flex;
   align-items: center; /* Centre verticalement le contenu */
@@ -26,27 +27,19 @@
 
 .prev,
 .next {
-  background-color: aliceblue;
-  border-radius: 2px;
+  background-color: #fdf5e6;
+  border: none;
   font-size: 30px;
   cursor: pointer;
   padding: 5px 10px;
-  position: absolute; /* Positionne les flèches de manière absolue */
+  position: relative;
   top: 50%; /* Centre verticalement les flèches */
   transform: translateY(-50%); /* Centre les flèches verticalement */
   z-index: 2; /* Assure que les flèches sont au-dessus du carousel */
 }
 
-.prev {
-  left: -60px; /* Positionne la flèche à l'extérieur du carousel à gauche */
-}
-
-.next {
-  right: -60px; /* Positionne la flèche à l'extérieur du carousel à droite */
-}
-
 .content {
-  width: 100%;
+  width: 91%;
   display: flex;
   gap: 40px; /* Espace entre les cartes */
   transition: transform 0.3s ease; /* Pour animer le déplacement des cartes */
@@ -82,6 +75,7 @@
 }
 
 .title {
+  font-family: 'JetBrains Mono', monospace;
   margin-top: 30px;
   font-size: 22px;
   font-weight: bold;
@@ -89,6 +83,7 @@
 }
 
 .playButton {
+  font-family: 'JetBrains Mono', monospace;
   margin-top: 20px;
   background-color: #fff;
   border: 1px solid #000;
@@ -101,4 +96,66 @@
 .playButton:hover {
   background-color: #ccc;
   transform: scale(1.05); /* Agrandit légèrement le bouton au survol */
+}
+
+
+/* Media query pour les écrans inférieurs à 1040px */
+@media screen and (max-width: 1085px) {
+  .card {
+    flex: 0 0 calc(20.33% - 20px); /* Chaque carte prend 33.33% de la largeur du conteneur moins la taille du gap */
+  }
+
+  .prev,
+  .next {
+    font-size: 25px; /* Réduire la taille des flèches */
+    padding: 4px 8px; /* Réduire le padding des flèches */
+  }
+}
+
+/* Media query pour les écrans inférieurs à 890px */
+@media screen and (max-width: 940px) {
+  .card {
+    flex: 0 0 calc(29% - 20px); /* Chaque carte prend 50% de la largeur du conteneur moins la taille du gap */
+  }
+
+  .prev,
+  .next {
+    font-size: 20px; /* Réduire encore la taille des flèches */
+    padding: 3px 6px; /* Réduire le padding des flèches */
+  }
+}
+
+/* Media query pour les écrans inférieurs à 600px */
+@media screen and (max-width: 785px) {
+  .card {
+    flex: 0 0 calc(28% - 20px); /* Chaque carte prend toute la largeur du conteneur */
+  }
+
+  .content {
+    gap: 30px; /* Réduire l'espacement entre les cartes */
+  }
+
+}
+
+
+/* Media query pour les écrans inférieurs à 600px */
+@media screen and (max-width: 665px) {
+  .card {
+    flex: 0 0 calc(25% - 20px); /* Chaque carte prend toute la largeur du conteneur */
+  }
+
+  .content {
+    gap: 25px; /* Réduire l'espacement entre les cartes */
+  }
+}
+
+/* Media query pour les écrans inférieurs à 600px */
+@media screen and (max-width: 410px) {
+  .card {
+    flex: 0 0 calc(10% - 10px); /* Chaque carte prend toute la largeur du conteneur */
+  }
+
+  .content {
+    gap: 10px; /* Réduire l'espacement entre les cartes */
+  }
 }

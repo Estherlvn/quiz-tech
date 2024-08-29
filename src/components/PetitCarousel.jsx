@@ -10,6 +10,7 @@ const PetitCarousel = () => {
     { title: 'HTML', slug: 'html' },
     { title: 'CSS', slug: 'css' },
     { title: 'UX UI', slug: 'uxui' },
+    { title: '', slug: '' },  // Bloc vide 0
     { title: 'Développement Web', slug: 'developpementweb' },
     { title: '', slug: '' },  // Bloc vide 1
     { title: '', slug: '' },  // Bloc vide 2
@@ -24,7 +25,7 @@ const PetitCarousel = () => {
   const handleScroll = (direction) => {
     if (carouselRef.current) {
       const cardWidth = carouselRef.current.querySelector(`.${styles.card}`).offsetWidth;
-      const scrollAmount = cardWidth * 5; // Définit le défilement nombre de cartes
+      const scrollAmount = cardWidth * 4; // Définit le défilement nombre de cartes
       carouselRef.current.scrollBy({
         left: direction === 'left' ? -scrollAmount : scrollAmount,
         behavior: 'smooth',

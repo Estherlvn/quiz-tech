@@ -8,6 +8,7 @@ import PetitCarousel from '../components/PetitCarousel'; // Import du composant 
 import AutoplayCarousel from '../components/AutoplayCarousel'; // Import du composant AutoplayCarousel
 import GrandCarousel from '../components/GrandCarousel'; // Import du composant GrandCarousel
 import ModuleBlock from '../components/ModuleBlock'; // Import du composant ModuleBlock
+import searchIcon from '../assets/Search.png'; // Importez l'image depuis les assets
 
 // Définition du composant Home
 const Home = () => {
@@ -53,7 +54,9 @@ const Home = () => {
               value={searchTerm} 
               onChange={handleSearchChange} // Appelée à chaque changement de la valeur du champ de recherche
             />
-            <button className={styles.arrowRight} onClick={handleSearchSubmit}>{">"}</button> {/* Bouton pour soumettre la recherche */}
+                     <button className={styles.validationButton} onClick={handleSearchSubmit}>
+            <img src={searchIcon} alt="Search Icon" /> {/* Utilisez l'image ici */}
+          </button>
           </div>
           <button className={styles.startQuizButton} onClick={handleStartQuiz}>
             Lancer un Quiz {/* Bouton pour démarrer un quiz général */}

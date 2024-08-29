@@ -35,7 +35,7 @@
 
 .arbre {
   position: absolute;
-  width: 37%;
+  width: 36%;
   top: -77px; /* Enlever la marge en haut */
   right: 0; /* Enlever la marge à droite */
   z-index: 4; /* Placez l'image en dessous des autres éléments */
@@ -51,17 +51,17 @@
   
 .ellipse {
     margin-right: 61%;
-    width: 30%;
+    width: 28%;
     display: block;
   }  
 
 .avatar-homepage {
   position: absolute;
   z-index: 3; /* Assurez-vous que l'image avatar-homepage est au-dessus de l'ellipse */
-  top: 45%; /* Ajustez cette valeur pour remonter l'image dans l'ellipse */
+  top: 40%; /* Ajustez cette valeur pour remonter l'image dans l'ellipse */
   left: 19%; /* Ajustez cette valeur pour centrer horizontalement */
   transform: translate(-50%, -50%); /* Centrez l'image dans l'ellipse */
-  width: 30%; /* Ajustez la taille de l'avatar selon vos besoins */
+  width: 28%; /* Ajustez la taille de l'avatar selon vos besoins */
   height: auto; /* Maintenez les proportions de l'image */
   box-shadow: (0 0 20px rgba(255, 255, 255, 0.7))
 }
@@ -78,7 +78,8 @@
     justify-content: center;
     align-items: center;
     z-index:5;
-    margin-top: 80px;
+    margin-top: 30px;
+
   }
   
   .searchBar {
@@ -93,7 +94,7 @@
     margin-right: 15px; /* Espace entre la barre de recherche et le bouton */
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
   }
-  
+
   .searchBar input {
     font-size: 18px;
     background-color: #ffffff;
@@ -101,6 +102,14 @@
     border: none;
     outline: none;
     font-family: 'JetBrains Mono', monospace;
+    padding: 7px;
+  }
+
+  .validationButton {
+    background-color: white;
+    border: none;
+    border-radius: 30px;
+    margin-right: 2px;
   }
 
   .arrowRight {
@@ -118,7 +127,7 @@
     border: solid 1px;
     min-width: 190px;
     padding: 10px 20px;
-    background-color: #da84a4;
+    background-color: #d75987;
     color: white;
     border: none;
     border-radius: 20px;

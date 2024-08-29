@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -100px;
+  margin-top: -86px;
   margin-bottom: 60px;
   padding: 16px;
   background-color: rgba(252, 248, 244, 0.8);
@@ -19,8 +19,6 @@
   display: flex;
   gap: 45px;
 }
-
-
 
 .carouselItem:hover {
   transform: scale(1.05);

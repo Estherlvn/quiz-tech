@@ -142,3 +142,365 @@
     color: #fff;
   }
   
+
+  @media screen and (max-width: 1120px) {
+    .UpContainer {
+      margin: 60px 0 0 38%; /* Réduire la marge pour mieux centrer sur les petits écrans */
+      width: 35%; /* Ajuster la largeur pour s'adapter aux écrans plus petits */
+    }
+  
+    .home h1 {
+      font-size: 38px; /* Réduire la taille de la police pour les petits écrans */
+    }
+  
+    .home h2 {
+      font-size: 20px; /* Réduire la taille de la police pour le sous-titre */
+      padding-top: 5px;
+    }
+
+    .arbre {
+      position: absolute;
+      width: 33%;
+      top: -60px; /* Enlever la marge en haut */
+      right: 0; /* Enlever la marge à droite */
+      z-index: 4; /* Placez l'image en dessous des autres éléments */
+    }
+  
+    .ellipseContainer {
+      margin: -100px 0 0 0; /* Ajuster la marge pour mieux positionner l'ellipse */
+    }
+
+    .ellipse {
+      
+      width: 30%;
+    }  
+  
+    .avatar-homepage {
+      width: 28%; /* Réduire la taille de l'avatar */
+      top: 40%; /* Réajuster le positionnement vertical */
+    }
+  
+    .searchAndButtonContainer {
+      margin-top: 40px; /* Ajuster la marge supérieure */
+    }
+
+    .searchBar input {
+      font-size: 13px;
+      padding: 7px;
+    }
+  
+    .startQuizButton {
+      font-size: 13px; /* Réduire la taille de la police */
+    }
+  }
+
+  @media screen and (max-width: 980px) {
+    .UpContainer {
+      margin: 60px 0 0 35%; /* Réduire la marge pour mieux centrer sur les petits écrans */
+      width: 35%; /* Ajuster la largeur pour s'adapter aux écrans plus petits */
+    }
+  
+    .home h1 {
+      font-size: 32px; /* Réduire la taille de la police pour les petits écrans */
+    }
+  
+    .home h2 {
+      font-size: 18px; /* Réduire la taille de la police pour le sous-titre */
+      padding-top: 5px;
+    }
+
+    .arbre {
+      position: absolute;
+      width: 33%;
+      top: -60px; /* Enlever la marge en haut */
+      right: 0; /* Enlever la marge à droite */
+      z-index: 4; /* Placez l'image en dessous des autres éléments */
+    }
+  
+    .ellipseCotainer {
+      margin: -100px 0 0 0; /* Ajuster la marge pour mieux positionner l'ellipse */
+    }
+
+    .ellipse {
+      width: 30%;
+    }  
+  
+    .avatar-homepage {
+      width: 27%; /* Réduire la taille de l'avatar */
+      top: 42%; /* Réajuster le positionnement vertical */
+    }
+  
+    .searchAndButtonContainer {
+      margin-top: 50px; /* Ajuster la marge supérieure */
+    }
+
+    .searchBar input {
+      font-size: 13px;
+      padding: 7px;
+    }
+  
+    .startQuizButton {
+      font-size: 13px; /* Réduire la taille de la police */
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .UpContainer {
+      margin: 60px 0 0 38%; /* Réduire la marge pour mieux centrer sur les petits écrans */
+      width: 35%; /* Ajuster la largeur pour s'adapter aux écrans plus petits */
+    }
+  
+    .home h1 {
+      font-size: 30px; /* Réduire la taille de la police pour les petits écrans */
+    }
+  
+    .home h2 {
+      font-size: 16px; /* Réduire la taille de la police pour le sous-titre */
+      padding-top: 5px;
+    }
+
+    .arbre {
+      position: absolute;
+      width: 30%;
+      top: -60px; /* Enlever la marge en haut */
+      right: 0; /* Enlever la marge à droite */
+      z-index: 4; /* Placez l'image en dessous des autres éléments */
+    }
+  
+    .ellipseCotainer {
+      margin: -220px 0 0 0; /* Ajuster la marge pour mieux positionner l'ellipse */
+    }
+
+    .ellipse {
+      width: 30%;
+    }  
+  
+    .avatar-homepage {
+      width: 27%; /* Réduire la taille de l'avatar */
+      top: 42%; /* Réajuster le positionnement vertical */
+    }
+  
+    .searchAndButtonContainer {
+      margin-top: 20px; /* Ajuster la marge supérieure */
+    }
+
+    .searchBar input {
+      font-size: 12px;
+      padding: 7px;
+    }
+  
+    .startQuizButton {
+      font-size: 12px; /* Réduire la taille de la police */
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .UpContainer {
+      margin: 50px 0 0 35%; /* Réduire la marge pour mieux centrer sur les petits écrans */
+      width: 40%; /* Ajuster la largeur pour s'adapter aux écrans plus petits */
+    }
+  
+    .home h1 {
+      font-size: 28px; /* Réduire la taille de la police pour les petits écrans */
+    }
+  
+    .home h2 {
+      font-size: 14px; /* Réduire la taille de la police pour le sous-titre */
+      padding-top: 4px;
+
+    }
+
+    .arbre {
+      position: absolute;
+      width: 35%;
+      top: -50px; /* Enlever la marge en haut */
+      right: 0; /* Enlever la marge à droite */
+      z-index: 3; /* Placez l'image en dessous des autres éléments */
+    }
+  
+    .ellipseContainer {
+      margin: -70px 0 0 0; /* Ajuster la marge pour mieux positionner l'ellipse */
+    }
+
+    .ellipse {
+      width: 30%;
+    }  
+  
+    .avatar-homepage {
+      width: 27%; /* Réduire la taille de l'avatar */
+      top: 35%; /* Réajuster le positionnement vertical */
+    }
+  
+    .searchAndButtonContainer {
+      margin-top: 10px; /* Réduire la marge supérieure */
+      align-items: center; /* Centrer les éléments */
+    }
+
+    .searchBar input {
+      font-size: 10px;
+      padding: 6px;
+    }
+  
+    .startQuizButton {
+      padding: 6px;
+      font-size: 10px; /* Réduire la taille de la police */
+    }
+  }
+
+  @media screen and (max-width: 660px) {
+    .UpContainer {
+      margin: 50px 0 0 35%; /* Réduire la marge pour mieux centrer sur les petits écrans */
+      width: 40%; /* Ajuster la largeur pour s'adapter aux écrans plus petits */
+    }
+  
+    .home h1 {
+      font-size: 26px; /* Réduire la taille de la police pour les petits écrans */
+    }
+  
+    .home h2 {
+      font-size: 12px; /* Réduire la taille de la police pour le sous-titre */
+      padding-top: 4px;
+
+    }
+
+    .arbre {
+      position: absolute;
+      width: 32%;
+      top: -40px; /* Enlever la marge en haut */
+      right: 0; /* Enlever la marge à droite */
+      z-index: 4; /* Placez l'image en dessous des autres éléments */
+    }
+  
+    .ellipseContainer {
+      margin: -100px 0 0 0; /* Ajuster la marge pour mieux positionner l'ellipse */
+    }
+
+    .ellipse {
+      width: 25%;
+    }  
+  
+    .avatar-homepage {
+      width: 27%; /* Réduire la taille de l'avatar */
+      top: 35%; /* Réajuster le positionnement vertical */
+    }
+  
+    .searchAndButtonContainer {
+      flex-direction: column; /* Mettre les éléments de recherche et le bouton sur une colonne */
+      margin-top: 10px; /* Réduire la marge supérieure */
+      margin-left:30px;
+      align-items: center; /* Centrer les éléments */
+    }
+
+    .searchBar input {
+      font-size: 6px;
+      padding: 4px;
+    }
+  
+    .startQuizButton {
+      margin-top: 5px;
+      font-size: 8px; /* Réduire la taille de la police */
+    }
+  }
+
+  @media screen and (max-width: 590px) {
+    .UpContainer {
+      margin: 50px 0 0 35%; /* Réduire la marge pour mieux centrer sur les petits écrans */
+      width: 40%; /* Ajuster la largeur pour s'adapter aux écrans plus petits */
+    }
+  
+    .home h1 {
+      font-size: 26px; /* Réduire la taille de la police pour les petits écrans */
+    }
+  
+    .home h2 {
+      font-size: 12px; /* Réduire la taille de la police pour le sous-titre */
+      padding-top: 4px;
+
+    }
+
+    .arbre {
+      position: absolute;
+      width: 32%;
+      top: -40px; /* Enlever la marge en haut */
+      right: 0; /* Enlever la marge à droite */
+      z-index: 4; /* Placez l'image en dessous des autres éléments */
+    }
+  
+    .ellipseContainer {
+      margin: -100px 0 0 0; /* Ajuster la marge pour mieux positionner l'ellipse */
+    }
+
+    .ellipse {
+      width: 25%;
+    }  
+  
+    .avatar-homepage {
+      width: 27%; /* Réduire la taille de l'avatar */
+      top: 35%; /* Réajuster le positionnement vertical */
+    }
+  
+    .searchAndButtonContainer {
+      flex-direction: column; /* Mettre les éléments de recherche et le bouton sur une colonne */
+      margin-top: 10px; /* Réduire la marge supérieure */
+      margin-left:30px;
+      align-items: center; /* Centrer les éléments */
+    }
+
+    .searchBar input {
+      font-size: 6px;
+      padding: 4px;
+    }
+  
+    .startQuizButton {
+      margin-top: 5px;
+      font-size: 8px; /* Réduire la taille de la police */
+    }
+  }
+
+  @media screen and (max-width: 360px) {
+    .UpContainer {
+      margin: 30px 0 0 15%; /* Réduire la marge pour mieux centrer sur les petits écrans */
+      width: 45%; /* Ajuster la largeur pour s'adapter aux écrans plus petits */
+    }
+  
+    .home h1 {
+      font-size: 22px; /* Réduire la taille de la police pour les petits écrans */
+      margin-right: 50px;
+    }
+  
+    .home h2 {
+      font-size: 10px; /* Réduire la taille de la police pour le sous-titre */
+      padding-top: 4px;
+
+    }
+
+    .arbre {
+      position: absolute;
+      width: 50%;
+      top: -50px; /* Enlever la marge en haut */
+      right: 0px; /* Enlever la marge à droite */
+      z-index: 1; /* Placez l'image en dessous des autres éléments */
+    }
+  
+    .ellipseContainer {
+      display: none;
+    }
+  
+    .searchAndButtonContainer {
+      flex-direction: column; /* Mettre les éléments de recherche et le bouton sur une colonne */
+      margin-top: 10px; /* Réduire la marge supérieure */
+      margin-left: -20px;
+      align-items: center; /* Centrer les éléments */
+    }
+
+    .searchBar input {
+      font-size: 6px;
+      padding: 4px;
+    }
+  
+    .startQuizButton {
+      margin-top: 5px;
+      font-size: 8px; /* Réduire la taille de la police */
+    }
+  }
+

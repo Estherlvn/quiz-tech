@@ -1,0 +1,38 @@
+/* MentionsLegales.module.css */
+
+.container {
+    padding: 40px; /* Ajoute de l'espace autour du contenu */
+    max-width: 800px; /* Limite la largeur pour une meilleure lisibilité */
+    margin: 0 auto; /* Centre le contenu sur la page */
+    background-color: #fdf5e6; /* Couleur de fond douce */
+    color: #333; /* Couleur du texte */
+    font-family: 'Arial', sans-serif; /* Police du texte */
+    line-height: 1.6; /* Améliore la lisibilité du texte */
+    border-radius: 8px; /* Arrondit les coins du conteneur */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajoute une ombre légère pour le contraste */
+  }
+  
+  h1 {
+    color: #50708A; /* Couleur des titres */
+    font-size: 2.5rem; /* Taille du titre principal */
+    margin-bottom: 20px; /* Espace sous le titre principal */
+    text-align: center; /* Centre le titre principal */
+  }
+  
+  h2 {
+    color: #50708A; /* Couleur des sous-titres */
+    font-size: 1.8rem; /* Taille des sous-titres */
+    margin-top: 30px; /* Espace au-dessus des sous-titres */
+    margin-bottom: 10px; /* Espace sous les sous-titres */
+  }
+  
+  p {
+    margin-bottom: 20px; /* Espace sous les paragraphes */
+    font-size: 1rem; /* Taille de la police des paragraphes */
+  }
+  
+  section {
+    margin-bottom: 30px; /* Espace sous chaque section */
+  }
+  
+  

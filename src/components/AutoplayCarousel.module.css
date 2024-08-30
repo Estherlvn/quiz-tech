@@ -37,3 +37,107 @@
 .carouselTrack {
   animation: scroll 25s linear infinite;
 }
+
+@media screen and (max-width: 1120px) {
+  .carouselContainer {
+    margin-top: -100px; /* Ajuste la marge supérieure pour les écrans plus petits */
+    margin-bottom: 30px; /* Réduit la marge inférieure pour les écrans plus petits */
+    padding: 15px; /* Réduit le padding pour les écrans plus petits */
+    max-height: 70px; /* Ajuste la hauteur maximale pour les écrans plus petits */
+  }
+
+  .carouselTrack {
+    gap: 20px; /* Réduit l'espacement entre les éléments du carousel */
+    animation: scroll 30s linear infinite; /* Augmente la durée de l'animation pour un défilement plus lent */
+    margin-left: 20px; /* Réduit la marge gauche pour centrer le contenu */
+  }
+
+  .carouselItem {
+    transform: scale(0.9); /* Réduit légèrement la taille des éléments pour s'adapter à l'écran */
+  }
+
+  .carouselItem:hover {
+    transform: scale(1); /* Ne pas agrandir les éléments sur les petits écrans */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Réduit l'ombre portée au survol */
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .carouselContainer {
+    margin-top: -80px; /* Ajuste encore la marge supérieure pour les écrans plus petits */
+    margin-bottom: 20px; /* Réduit davantage la marge inférieure */
+    padding: 30px; /* Réduit encore le padding pour un meilleur ajustement */
+    max-height: 40px; /* Réduit la hauteur maximale du carousel */
+  }
+
+  .carouselTrack {
+    gap: 20px; /* Réduit l'espacement entre les éléments du carousel */
+    animation: scroll 35s linear infinite; /* Rend le défilement encore plus lent pour un meilleur affichage */
+    margin-left: 10px; /* Réduit encore la marge gauche pour centrer le contenu */
+  }
+
+  .carouselItem {
+    transform: scale(0.30); /* Réduit encore plus la taille des éléments pour s'adapter à l'écran */
+  }
+
+  .carouselItem:hover {
+    transform: scale(0.9); /* Réduit l'agrandissement des éléments au survol */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); /* Réduit encore l'ombre portée au survol */
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .carouselContainer {
+    margin-top: -80px; /* Ajuste encore la marge supérieure pour les écrans plus petits */
+    margin-bottom: 20px; /* Réduit davantage la marge inférieure */
+    padding: 5%; /* Réduit encore le padding pour un meilleur ajustement */
+    max-height: 20px; /* Réduit la hauteur maximale du carousel */
+  }
+
+  .carouselTrack {
+    gap: 25px; /* Réduit l'espacement entre les éléments du carousel */
+    animation: scroll 35s linear infinite; /* Rend le défilement encore plus lent pour un meilleur affichage */
+    margin-left: 10px; /* Réduit encore la marge gauche pour centrer le contenu */
+  }
+
+  .carouselItem {
+    transform: scale(0.20); /* Réduit encore plus la taille des éléments pour s'adapter à l'écran */
+  }
+
+  .carouselItem:hover {
+    transform: scale(0.9); /* Réduit l'agrandissement des éléments au survol */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); /* Réduit encore l'ombre portée au survol */
+  }
+}
+
+
+@media screen and (max-width: 800px) {
+  .carouselContainer {
+    margin-top: -80px; /* Ajuste encore la marge supérieure pour les écrans plus petits */
+    margin-bottom: 20px; /* Réduit davantage la marge inférieure */
+    padding: 5%; /* Réduit encore le padding pour un meilleur ajustement */
+    max-height: 3px; /* Réduit la hauteur maximale du carousel */
+  }
+
+  .carouselTrack {
+    gap: 30px; /* Réduit l'espacement entre les éléments du carousel */
+    animation: scroll 35s linear infinite; /* Rend le défilement encore plus lent pour un meilleur affichage */
+    margin-left: 10px; /* Réduit encore la marge gauche pour centrer le contenu */
+  }
+
+  .carouselItem {
+    transform: scale(0.20); /* Réduit encore plus la taille des éléments pour s'adapter à l'écran */
+  }
+
+  .carouselItem:hover {
+    transform: scale(0.9); /* Réduit l'agrandissement des éléments au survol */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); /* Réduit encore l'ombre portée au survol */
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .carouselContainer {
+  display: none;
+  }
+
+}

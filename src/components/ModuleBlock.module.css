@@ -1,6 +1,6 @@
 .moduleContainer {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto 80px auto;
     padding: 20px;
   }
@@ -52,5 +52,124 @@
   
   .videoLink:hover {
     background-color: #eca0a3;
+  }
+  
+  .moduleContainer {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto 80px auto;
+    padding: 20px;
+  }
+  
+  .header {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .gridContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Trois colonnes par défaut */
+    grid-gap: 30px;
+    padding: 20px;
+  }
+  
+  .moduleBlock {
+    background-color: #f5f5f5;
+    border: 1px solid #817373;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .moduleBlock:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .videoLink {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #FFC1C3;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .videoLink:hover {
+    background-color: #eca0a3;
+  }
+  
+  /* Media Queries for Responsive Design */
+  
+  /* Pour les écrans de moins de 1024px */
+  @media screen and (max-width: 1024px) {
+    .gridContainer {
+      grid-template-columns: repeat(2, 1fr); /* Deux colonnes pour les écrans moyens */
+    }
+  
+    .header {
+      font-size: 25px; /* Ajuste la taille de la police du header */
+    }
+  
+    .title {
+      font-size: 16px; /* Ajuste la taille de la police des titres */
+    }
+  
+    .moduleBlock {
+      padding: 15px; /* Réduit le padding des modules */
+    }
+  }
+  
+  /* Pour les écrans de moins de 768px */
+  @media screen and (max-width: 768px) {
+    .gridContainer {
+      grid-template-columns: 1fr; /* Une colonne pour les écrans plus petits */
+    }
+  
+    .header {
+      font-size: 23px; /* Ajuste la taille de la police du header */
+    }
+  
+    .title {
+      font-size: 14px; /* Ajuste la taille de la police des titres */
+    }
+  
+    .moduleBlock {
+      padding: 10px; /* Réduit le padding des modules */
+    }
+  
+    .videoLink {
+      padding: 8px 16px; /* Réduit le padding des boutons */
+    }
+  }
+  
+  /* Pour les écrans de moins de 480px */
+  @media screen and (max-width: 480px) {
+    .header {
+      font-size: 23px; /* Ajuste la taille de la police du header */
+    }
+  
+    .title {
+      font-size: 12px; /* Ajuste la taille de la police des titres */
+    }
+  
+    .moduleBlock {
+      padding: 8px; /* Réduit encore le padding des modules */
+    }
+  
+    .videoLink {
+      padding: 6px 12px; /* Réduit encore le padding des boutons */
+    }
   }
   

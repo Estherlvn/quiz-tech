@@ -1,5 +1,6 @@
 // src/components/Footer.jsx
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';
 import logo from '../assets/logo.png'; // Assurez-vous que le chemin est correct
 import livre from '../assets/livre.png';
@@ -12,21 +13,17 @@ const Footer = () => (
         <img src={logo} alt="Logo" className={styles.logo} />
       </div>
       <div className={styles.column1}>
-        <h4>Resources</h4>
+        <h4>Ressources</h4>
         <ul>
           <li>Wireframing</li>
-          <li>Diagramming</li>
-          <li>Brainstorming</li>
-          <li>Online whiteboard</li>
+          <li>GitHub</li>
         </ul>
       </div>
       <div className={styles.column2}>
-        <h4>Support</h4>
+        <h4>Contact</h4>
         <ul>
-          <li>Development features</li>
-          <li>Collaboration features</li>
-          <li>Developers</li>
-          <li>Resource library</li>
+          <li>Support</li>
+          <li>Team</li>
         </ul>
       </div>
     </div>
@@ -34,8 +31,10 @@ const Footer = () => (
     {/* Placer la ligne horizontale et les mentions légales ici */}
     <hr className={styles.horizontalLine} />
     <div className={styles.legalMentions}>
-      <p>Mentions légales | Politique de confidentialité</p>
-    </div>
+        <p>
+        <Link to="/mentions-legales">Mentions légales</Link>
+        </p>
+      </div>
   </footer>
 );
 

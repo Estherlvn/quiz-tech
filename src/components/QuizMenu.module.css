@@ -65,3 +65,39 @@
 .scrollToTopButton img:hover {
   transform: scale(1.1); /* Agrandir légèrement l'image au survol */
 }
+
+@media screen and (max-width: 890px) {
+  .quizMenu {
+    padding: 10px; /* Réduit le padding global pour les petits écrans */
+  }
+
+  .themeTitle {
+    font-size: 1.5rem; /* Réduit la taille de police */
+    margin-bottom: 20px; /* Réduit la marge inférieure */
+  }
+
+  .themeSelector {
+    max-width: 100%; /* Utilise toute la largeur disponible */
+    margin-left: 0; /* Supprime la marge à gauche pour utiliser tout l'espace */
+    justify-content: flex-start; /* Garde les blocs alignés à gauche */
+    gap: 10px; /* Réduit l'espace entre les blocs pour les petits écrans */
+  }
+
+  .themeBlock {
+    width: calc(33.33% - 10px); /* Ajuste la largeur des blocs pour permettre 3 par ligne */
+    flex: 0 0 calc(33.33% - 10px); /* Assure que chaque bloc prend un tiers de la ligne moins l'espace */
+    margin-top:  10px; /* Ajoute une marge supérieure pour les petits écrans */
+    margin-bottom: 15px; /* Ajoute un espace entre les lignes de blocs */
+    margin-left: 30px;
+  }
+
+  .scrollToTopButton {
+    bottom: 20px; /* Ajuste la position du bouton de défilement vers le haut pour les petits écrans */
+    right: 10px; /* Ajuste la position du bouton pour qu'il soit plus proche du bord droit */
+  }
+
+  .scrollToTopButton img {
+    width: 30px; /* Réduit la taille de l'image du bouton pour les petits écrans */
+    height: 30px; /* Réduit la hauteur de l'image du bouton pour les petits écrans */
+  }
+}

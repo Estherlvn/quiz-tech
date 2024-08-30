@@ -5,12 +5,12 @@ import styles from './ModuleBlock.module.css';
 const ModuleBlock = () => {
   // Liste des modules vidéo avec titre et lien
   const videoModules = [
-    { title: 'Building Web Apps with HTML5', videoLink: 'https://www.example.com/video4' },
-    { title: 'Advanced CSS Techniques', videoLink: 'https://www.example.com/video2' },
-    { title: 'Understanding UX/UI', videoLink: 'https://www.example.com/video5' },
-    { title: 'Bootstrap for Beginners', videoLink: 'https://www.example.com/video6' },
-    { title: 'Introduction to JavaScript', videoLink: 'https://www.example.com/video1' },
-    { title: 'React Basics', videoLink: 'https://www.example.com/video3' },
+    { title: 'Créer des applications web avec HTML5', videoLink: 'https://www.example.com/video4' },
+    { title: 'Techniques avancées de CSS', videoLink: 'https://www.example.com/video2' },
+    { title: 'Comprendre l\'UX/UI', videoLink: 'https://www.example.com/video5' },
+    { title: 'Bootstrap pour les débutants', videoLink: 'https://www.example.com/video6' },
+    { title: 'Introduction à JavaScript', videoLink: 'https://www.example.com/video1' },
+    { title: 'Les bases de React', videoLink: 'https://www.example.com/video3' },
   ];
 
   return (

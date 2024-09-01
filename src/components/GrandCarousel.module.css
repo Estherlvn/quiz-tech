@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
 
+.carouselHeader {
+  background-color: #fffbf2;
+  padding: 15px;
+}
+
+.carouselHeader h2 {
+  font-size: 22px;
+  background-color: #fffbf2;
+  padding-top: 50px;
+  text-align: left;
+  margin-left: 15px
+}
+
+
 .wrapper {
   width: 100%;
   height: auto;
@@ -27,16 +41,23 @@
 
 .prev,
 .next {
-  background-color: #fdf5e6;
+  background-color: #fffbf2;
   border: none;
-  font-size: 30px;
+  font-size: 40px;
   cursor: pointer;
   padding: 5px 10px;
   position: relative;
-  top: 50%; /* Centre verticalement les flèches */
+  top: 30px; /* Centre verticalement les flèches */
   transform: translateY(-50%); /* Centre les flèches verticalement */
   z-index: 2; /* Assure que les flèches sont au-dessus du carousel */
+  transition: font-size 0.3s ease; /* Transition fluide pour l'animation */
 }
+
+.prev:hover,
+.next:hover {
+  font-size: 50px; /* Taille agrandie au survol */
+}
+
 
 .content {
   width: 91%;

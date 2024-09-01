@@ -7,7 +7,8 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 40px; 
+  margin-top: 15px;
+  margin-bottom: 90px; 
   padding: 0 5px; 
 }
 
@@ -30,6 +31,11 @@ body {
   color: #333;
 }
 
+.questionTitle {
+  margin: 0;
+}
+
+
 .title {
   font-size: 1.5rem; 
   font-weight: bold;
@@ -41,12 +47,12 @@ body {
 .questionBox {
   background-color: white;
   padding: 20px; 
-  margin-left: 50%; /* Centre la box horizontalement */
+  margin-left: 40%; /* Centre la box horizontalement */
   margin-bottom: 15px;
   border-radius: 15px; 
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2); 
-  width: 100%; 
-  max-width: 550px; /* Taille uniforme pour la box */
+  min-width: 600px;
+  max-width: 600px;
   z-index: 2;
   position: relative;
 }
@@ -60,13 +66,13 @@ body {
 .questionTitle {
   text-align: center;
   font-size: 1.2rem; 
-  margin-bottom: 8px; 
+  margin-bottom: 4px; 
 }
 
 .questionText {
   text-align: center;
   font-size: 1.2rem; 
-  margin-bottom: 16px; 
+  margin-top: 20px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
 }
@@ -109,7 +115,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 16px; 
+  margin-top: 28px; 
+  margin-bottom: 0px;
   width: 100%;
 }
 
@@ -165,18 +172,61 @@ body {
   color: #333;
 }
 
-/* Media Query pour maintenir la taille uniforme sur différents écrans */
+.incorrectAnswers {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f8d7da;
+  border-radius: 10px;
+  border: 1px solid #f5c6cb;
+}
+
+.incorrectAnswer {
+  margin-bottom: 18px;
+}
+
+.incorrectAnswer p {
+  margin: 5px 0;
+}
+
+
+/* Media Queries pour rendre le composant responsive */
+
 @media screen and (max-width: 890px) {
   .questionBox {
-    max-width: 480px; /* Ajuste la largeur maximale pour les écrans plus petits */
+    min-width: auto; /* Supprime la largeur minimale fixe */
+    max-width: 90%; /* Utilise 90% de la largeur disponible */
+    padding: 15px; /* Réduit le padding */
   }
-  .title, .questionTitle, .questionText {
-    font-size: 1.1rem; /* Ajuste la taille de police pour les petits écrans */
+
+  .title {
+    font-size: 1.2rem; /* Réduit la taille de police du titre */
   }
-  .answerLetter, .answerText {
+
+  .questionTitle,
+  .questionText {
+    font-size: 1rem; /* Réduit la taille de police pour les questions */
+  }
+
+  .answerLetter,
+  .answerText {
     font-size: 0.9rem; /* Réduit la taille de police pour les réponses */
   }
+
   .backButton, .submitButton {
-    width: 90px; /* Réduit la largeur des boutons sur les petits écrans */
+    width: 80px; /* Réduit la largeur des boutons */
+    padding: 6px; /* Réduit le padding des boutons */
+  }
+
+  .score, .current, .total, .scoreValue, .totalValue {
+    font-size: 0.9rem; /* Réduit la taille de police pour les scores et le compteur */
+  }
+
+  .incorrectAnswers {
+    padding: 10px; /* Réduit le padding pour les réponses incorrectes */
+  }
+
+  .incorrectAnswer p {
+    font-size: 0.9rem; /* Réduit la taille de police des réponses incorrectes */
   }
 }
+

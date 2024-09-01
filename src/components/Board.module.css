@@ -1,28 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
 .boardContainer {
   padding: 20px;
-  background-color: #fbcdd1;
+  background-color: #fefdfb;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 2;
-  margin: 10% 20%;
   overflow-x: auto; /* Ajouté pour permettre le défilement horizontal si nécessaire */
+  width: 60%;
+  margin: 5% auto 10% 20%;
 }
 
 .scoreSection {
-  margin: 20px;
-  background-color: #f7f2ee;
-  padding: 20px;
+  background-color: #fdf5e6;
+  padding: 5px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .scoreSection h3 {
-  font-size: 1.4rem;
+  font-family: 'JetBrains Mono', monospace;
+  text-align: left;
+  margin: 50px auto 40px 20px;
+  color: #50708A;
+  font-size: 1.8rem;
   font-weight: bold;
-  margin-bottom: 20px;
-  color: #3E4C59;
-  text-align: center; /* Centre le titre */
 }
 
 .tableContainer {
@@ -32,7 +35,7 @@
 }
 
 .tableHeader {
-  background-color: #e5e5e5;
+  background-color: #fbd8db;
   color: #3E4C59;
   text-align: left;
   padding: 10px;

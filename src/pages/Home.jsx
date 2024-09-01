@@ -24,7 +24,7 @@ const Home = () => {
 
   // Fonction pour gérer la soumission de la recherche
   const handleSearchSubmit = () => {
-    const themes = ['développementweb', 'uxui', 'css', 'html']; // Liste des thèmes de quiz disponibles
+    const themes = ['technos', 'uxui', 'css', 'html']; // Liste des thèmes de quiz disponibles
 
     if (themes.includes(searchTerm.toLowerCase())) {
       // Si le thème saisi est disponible, redirige vers la page du quiz correspondant

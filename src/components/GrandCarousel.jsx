@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // Importer useNavigate pour la navigation
 import styles from './GrandCarousel.module.css';
 import htmlImg from '../assets/HTML.png';
 import cssImg from '../assets/CSS.png';
@@ -10,16 +11,17 @@ import pythonImg from '../assets/PYTHON.png';
 const GrandCarousel = () => {
   const carouselRef = useRef(null);
   const contentRef = useRef(null);
+  const navigate = useNavigate(); // Utilisez useNavigate pour la redirection
   const [cardWidth, setCardWidth] = useState(0);
 
-  // Images data
+  // Images data avec les slugs pour les thèmes
   const items = [
-    { imgSrc: jsImg, title: 'JavaScript' },
-    { imgSrc: reactImg, title: 'React' },
-    { imgSrc: pythonImg, title: 'Python' },
-    { imgSrc: bootstrapImg, title: 'Bootstrap' },
-    { imgSrc: htmlImg, title: 'HTML' },
-    { imgSrc: cssImg, title: 'CSS' },
+    { imgSrc: jsImg, title: 'JavaScript', slug: 'javascript' },
+    { imgSrc: reactImg, title: 'React', slug: 'react' },
+    { imgSrc: pythonImg, title: 'Python', slug: 'python' },
+    { imgSrc: bootstrapImg, title: 'Bootstrap', slug: 'bootstrap' },
+    { imgSrc: htmlImg, title: 'HTML', slug: 'html' },
+    { imgSrc: cssImg, title: 'CSS', slug: 'css' },
   ];
 
   useEffect(() => {
@@ -42,6 +44,12 @@ const GrandCarousel = () => {
     }
   };
 
+  const handlePlayClick = (slug) => {
+    if (slug) {
+      navigate(`/quiz?theme=${slug}`); // Redirige vers la page Quiz avec le thème en paramètre
+    }
+  };
+
   return (
     <div className={styles.carouselHeader}>
       <h2 className={styles.header}>Aller plus loin</h2>
@@ -55,7 +63,7 @@ const GrandCarousel = () => {
               <div key={index} className={styles.card}>
                 <img src={item.imgSrc} alt={item.title} className={styles.image} />
                 <div className={styles.title}>{item.title}</div>
-                <button className={styles.playButton}>Jouer</button>
+                <button className={styles.playButton} onClick={() => handlePlayClick(item.slug)}>Jouer</button>
               </div>
             ))}
           </div>

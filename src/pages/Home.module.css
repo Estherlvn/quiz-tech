@@ -8,7 +8,7 @@
 
 .UpContainer {
   margin: 75px 0 0 35%;
-  width: 32%;
+  width: 37%;
   position: relative; /* Ajoutez une position pour que le z-index fonctionne */
 }
 
@@ -21,6 +21,7 @@
 }
 
 .home h2 {
+  font-size: 22px;
   color: #273039;
   text-align: center;
   margin: 0;
@@ -35,7 +36,7 @@
 
 .arbre {
   position: absolute;
-  width: 36%;
+  width: 34%;
   top: -77px; /* Enlever la marge en haut */
   right: 0; /* Enlever la marge à droite */
   z-index: 4; /* Placez l'image en dessous des autres éléments */

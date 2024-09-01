@@ -2,11 +2,14 @@ import React, { useState, useCallback, useEffect } from 'react';
 import Result from './Result';
 import QuizResultHandler from './QuizResultHandler';
 import styles from './QuizBox.module.css';
-import développementweb from '../data/développementweb';
+import technos from '../data/technos';
 import uxui from '../data/uxui';
 import css from '../data/css';
 import html from '../data/html';
-import react from '../data/react'; // Import des questions React
+import react from '../data/react';
+import bootstrap from '../data/bootstrap';
+import python from '../data/python';
+import javascript from '../data/javascript';
 
 const QuizBox = ({ selectedTheme }) => {
   const questions = selectedTheme === 'uxui'
@@ -17,13 +20,20 @@ const QuizBox = ({ selectedTheme }) => {
         ? html
         : selectedTheme === 'react'
           ? react
-          : développementweb; // Sélectionne les questions en fonction du thème
+          : selectedTheme === 'bootstrap'
+            ? bootstrap
+            : selectedTheme === 'python'
+            ? python
+            : selectedTheme === 'javascript'
+            ? javascript
+            : technos; // Sélectionne les questions en fonction du thème
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [answersHistory, setAnswersHistory] = useState([]);
+  const [incorrectAnswers, setIncorrectAnswers] = useState([]); // État pour suivre les mauvaises réponses
 
   const handleAnswerClick = (answer) => {
     setSelectedAnswer(answer);
@@ -34,6 +44,14 @@ const QuizBox = ({ selectedTheme }) => {
       const updatedAnswersHistory = [...answersHistory];
       updatedAnswersHistory[currentQuestionIndex] = selectedAnswer;
       setAnswersHistory(updatedAnswersHistory);
+
+      // Vérifiez si la réponse est incorrecte
+      if (!selectedAnswer.isCorrect) {
+        setIncorrectAnswers((prev) => [
+          ...prev,
+          { question: questions[currentQuestionIndex], chosenAnswer: selectedAnswer },
+        ]);
+      }
 
       const nextQuestionIndex = currentQuestionIndex + 1;
       if (nextQuestionIndex < questions.length) {
@@ -57,6 +75,7 @@ const QuizBox = ({ selectedTheme }) => {
     setScore(0);
     setShowResult(false);
     setAnswersHistory([]);
+    setIncorrectAnswers([]); // Réinitialise les mauvaises réponses
   };
 
   const calculateScore = useCallback(() => {
@@ -74,6 +93,7 @@ const QuizBox = ({ selectedTheme }) => {
     setShowResult(false);
     setSelectedAnswer(null);
     setAnswersHistory([]);
+    setIncorrectAnswers([]); // Réinitialise les mauvaises réponses
   }, [selectedTheme]);
 
   return (
@@ -83,10 +103,22 @@ const QuizBox = ({ selectedTheme }) => {
           {/* Intégrer QuizResultHandler pour enregistrer le résultat */}
           <QuizResultHandler quizTitle={selectedTheme} score={score} />
           <Result score={score} total={questions.length} onRestart={handleRestart} />
+          {incorrectAnswers.length > 0 && (
+            <div className={styles.incorrectAnswers}>
+              <h3>Réponses Incorrectes</h3>
+              {incorrectAnswers.map((item, index) => (
+                <div key={index} className={styles.incorrectAnswer}>
+                  <p><strong>Question :</strong> {item.question.text}</p>
+                  <p><strong>Votre réponse :</strong> {item.chosenAnswer.text}</p>
+                  <p><strong>Bonne réponse :</strong> {item.question.answers.find(ans => ans.isCorrect).text}</p>
+                </div>
+              ))}
+            </div>
+          )}
         </>
       ) : (
         <div className={styles.quizBox}>
-          <div className={styles.backgroundImage}></div> {/* Ajout de l'image de fond */}
+          <div className={styles.backgroundImage}></div>
           <div className={styles.questionBox}>
             <div className={styles.header}>
               <div className={styles.progress}>
@@ -103,8 +135,11 @@ const QuizBox = ({ selectedTheme }) => {
               {selectedTheme === 'uxui' ? 'UX UI' :
               selectedTheme === 'css' ? 'CSS' : 
               selectedTheme === 'html' ? 'HTML' : 
-              selectedTheme === 'react' ? 'React' : 
-              'Développement Web'}
+              selectedTheme === 'react' ? 'React' :
+              selectedTheme === 'bootstrap' ? 'Bootstrap' :
+              selectedTheme === 'python' ? 'Python' :
+              selectedTheme === 'javascript' ? 'Javascript':
+              'Technos'}
             </h1>
             <h2 className={styles.questionTitle}>Question {currentQuestionIndex + 1}</h2>
             <p className={styles.questionText}>{questions[currentQuestionIndex].text}</p>

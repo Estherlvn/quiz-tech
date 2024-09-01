@@ -10,8 +10,8 @@ const PetitCarousel = () => {
     { title: 'HTML', slug: 'html' },
     { title: 'CSS', slug: 'css' },
     { title: 'UX UI', slug: 'uxui' },
+    { title: 'Technos', slug: 'technos' },
     { title: '', slug: '' },  // Bloc vide 0
-    { title: 'Développement Web', slug: 'developpementweb' },
     { title: '', slug: '' },  // Bloc vide 1
     { title: '', slug: '' },  // Bloc vide 2
   ];

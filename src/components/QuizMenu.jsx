@@ -5,7 +5,7 @@ import styles from './QuizMenu.module.css';
 import arrow from '../assets/arrow.png'; // Import de l'image de la flèche
 
 const QuizMenu = () => {
-  const [selectedTheme, setSelectedTheme] = useState('développementweb');
+  const [selectedTheme, setSelectedTheme] = useState('technos');
   const [searchParams] = useSearchParams();
   const [showScrollToTop, setShowScrollToTop] = useState(false); // État pour contrôler la visibilité de la flèche
   const quizBoxRef = useRef(null);
@@ -42,7 +42,7 @@ const QuizMenu = () => {
       <div className={styles.themeContainer}>
         <h1 className={styles.themeTitle}>Choix du thème</h1>
         <div className={styles.themeSelector}>
-          {['développementweb', 'uxui', 'css', 'html', 'react'].map((theme, index) => (
+          {['technos', 'uxui', 'css', 'html', 'react', 'bootstrap', 'python', 'javascript'].map((theme, index) => (
             <div
               key={theme}
               className={`${styles.themeBlock} ${selectedTheme === theme ? styles.selected : ''}`}

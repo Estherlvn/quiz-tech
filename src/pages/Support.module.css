@@ -6,14 +6,14 @@
     min-height: 100vh; /* Pour s'assurer que la page occupe tout l'écran */
   }
   
-  h1 {
+  .supportPage h1 {
     text-align: left;
     color: #3E4C59;
   }
   
   p {
+    padding: 20px;
     text-align: left;
-    margin-bottom: 40px;
-    margin-left: 20px;
+    margin-bottom: 60px;
   }
   

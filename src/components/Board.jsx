@@ -11,9 +11,9 @@ const Board = () => {
   }, []);
 
   return (
-    <div className={styles.boardContainer}>
-      <div className={styles.scoreSection}>
+    <div className={styles.scoreSection}>
         <h3>Mes Résultats de Quiz</h3>
+    <div className={styles.boardContainer}>
         {quizResults.length > 0 ? (
           <table className={styles.tableContainer}>
             <thead>

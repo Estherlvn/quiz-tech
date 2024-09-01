@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
 
-.carouselHeader {
-  margin-top: 40px;
+.carouselHeader h2 {
+  font-size: 22px;
+  padding-top: 20px;
+  text-align: left;
+  margin-left: 30px
 }
 
 /* Conteneur principal du carousel */
@@ -12,7 +15,7 @@
   display: flex;
   align-items: center; /* Centre verticalement le contenu */
   justify-content: center; /* Centre le carousel avec les flèches */
-  margin: 0 auto 80px auto; /* Centre horizontalement le carousel dans la page */
+  margin: 0 auto 50px auto; /* Centre horizontalement le carousel dans la page */
   overflow: hidden; /* Masque tout ce qui dépasse du conteneur principal */
   padding: 0; /* Enlève tout le padding */
 }
@@ -31,18 +34,23 @@
 .arrowLeft, .arrowRight {
   cursor: pointer;
   font-size: 40px;
-  cursor: pointer;
   padding: 20px;
   position: relative; /* Position absolue pour les flèches */
-  margin-top: 70px;
+  margin-top: 80px;
   transform: translateY(-50%); /* Centre les flèches verticalement */
   z-index: 15; /* Assure que les flèches sont au-dessus du carousel et des cartes */
+  transition: font-size 0.3s ease; /* Transition fluide pour l'animation */
 }
+
+.arrowLeft:hover, .arrowRight:hover {
+  font-size: 50px; /* Taille agrandie au survol */
+}
+
 
 /* Conteneur des cartes du carousel */
 .carousel {
   display: flex;
-  gap: 25px; /* Espace entre les cartes pour permettre l'agrandissement */
+  gap: 28px; /* Espace entre les cartes pour permettre l'agrandissement */
   overflow: hidden; /* Masque les cartes qui dépassent horizontalement */
   max-width: 100%; /* Utilise toute la largeur disponible pour afficher les cartes */
   scroll-behavior: smooth; /* Ajoute un défilement fluide */

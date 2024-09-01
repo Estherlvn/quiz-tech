@@ -1,4 +1,4 @@
-const développementwebQuestions = [
+const technosQuestions = [
     {
       text: 'Quelle est la dernière version stable de React ?',
       answers: [
@@ -100,5 +100,5 @@ const développementwebQuestions = [
     }
   ];
   
-  export default développementwebQuestions;
+  export default technosQuestions;
   

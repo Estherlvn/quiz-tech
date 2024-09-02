@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import de la fonction useNavigate pour la redirection
 import ellipse from '../assets/ellipse.png'; // Import de l'image ellipse
 import avatarHomepage from '../assets/avatar-homepage.png'; // Import de l'image avatarHomepage
 import arbre from '../assets/arbre.png'; // Import de l'image arbre
+import arrow from '../assets/arrow.png'; // Import de l'image de la flèche de défilement vers le haut
 import styles from './Home.module.css'; // Import des styles CSS spécifiques à ce composant
 import PetitCarousel from '../components/PetitCarousel'; // Import du composant PetitCarousel
 import AutoplayCarousel from '../components/AutoplayCarousel'; // Import du composant AutoplayCarousel
@@ -14,6 +15,7 @@ import searchIcon from '../assets/Search.png'; // Importez l'image depuis les as
 const Home = () => {
   const navigate = useNavigate(); // Hook pour la navigation programmatique entre les pages
   const [searchTerm, setSearchTerm] = useState(''); // État pour stocker le terme de recherche saisi par l'utilisateur
+  const [showScrollToTop, setShowScrollToTop] = useState(false); // État pour afficher ou masquer le bouton de retour en haut
 
   const fullText = "Testez vos connaissances Tech et développement web"; // Texte de description affiché sur la page
 
@@ -24,7 +26,7 @@ const Home = () => {
 
   // Fonction pour gérer la soumission de la recherche
   const handleSearchSubmit = () => {
-    const themes = ['technos', 'uxui', 'css', 'html']; // Liste des thèmes de quiz disponibles
+    const themes = ['technos', 'uxui', 'css', 'html', 'react', 'bootstrap', 'javascript', 'python']; // Liste des thèmes de quiz disponibles
 
     if (themes.includes(searchTerm.toLowerCase())) {
       // Si le thème saisi est disponible, redirige vers la page du quiz correspondant
@@ -35,10 +37,36 @@ const Home = () => {
     }
   };
 
+  // Fonction pour gérer la soumission avec la touche "Entrée"
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      handleSearchSubmit(); // Appelle la fonction de recherche
+    }
+  };
+
   // Fonction pour démarrer un quiz général
   const handleStartQuiz = () => {
     navigate('/quiz'); // Redirige vers la page de quiz sans paramètre de thème
   };
+
+  // Fonction pour faire défiler vers le haut
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Effet pour surveiller le défilement de la page
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > window.innerHeight) {
+        setShowScrollToTop(true);
+      } else {
+        setShowScrollToTop(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Rendu du composant Home
   return (
@@ -53,10 +81,11 @@ const Home = () => {
               placeholder="Rechercher un Quiz" 
               value={searchTerm} 
               onChange={handleSearchChange} // Appelée à chaque changement de la valeur du champ de recherche
+              onKeyPress={handleKeyPress} // Appelée lorsqu'une touche est pressée dans le champ de recherche
             />
-                     <button className={styles.validationButton} onClick={handleSearchSubmit}>
-            <img src={searchIcon} alt="Search Icon" /> {/* Utilisez l'image ici */}
-          </button>
+            <button className={styles.validationButton} onClick={handleSearchSubmit}>
+              <img src={searchIcon} alt="Search Icon" /> {/* Utilisez l'image ici */}
+            </button>
           </div>
           <button className={styles.startQuizButton} onClick={handleStartQuiz}>
             Lancer un Quiz {/* Bouton pour démarrer un quiz général */}
@@ -76,6 +105,13 @@ const Home = () => {
       <PetitCarousel /> {/* Petit carrousel interactif */}
       <GrandCarousel /> {/* Grand carrousel interactif */}
       <ModuleBlock /> {/* Bloc de module avec des liens vers des vidéos ou des ressources */}
+
+      {/* Bouton de retour en haut */}
+      {showScrollToTop && (
+        <button className={styles.scrollToTopButton} onClick={scrollToTop}>
+          <img src={arrow} alt="Scroll to top" className={styles.arrow} />
+        </button>
+      )}
     </div>
   );
 };

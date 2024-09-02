@@ -1,4 +1,5 @@
-/* Style global du footer */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
 .footer {
   background-color: #50708A;
   color: white;
@@ -6,11 +7,12 @@
   position: relative; /* Nécessaire pour positionner l'image du livre de manière absolue */
   width: 100%;
   height: auto;
-  padding-bottom: 70px;
+  padding-bottom: 40px;
 }
 
 /* Conteneur principal du footer */
 .container {
+  font-family: 'JetBrains Mono', monospace;
   display: flex;
   align-items: flex-start; /* Aligne tous les éléments en haut du conteneur */
   margin: 0 auto;
@@ -25,6 +27,7 @@
   position: absolute; /* Positionne l'image de manière absolue par rapport au footer */
   left: 0px; /* Ajuste la position horizontale de l'image du livre */
   max-width: 145px;
+  margin-top: 50px;
   z-index: 1; /* Place l'image en dessous des autres éléments pour qu'elle ne les recouvre pas */
 }
 
@@ -38,6 +41,11 @@
   height: 120px; /* Ajuste la taille du logo selon vos besoins */
   border-radius: 50%;
   margin-left: 220px;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
 }
 
 .column2, .column1 {
@@ -74,6 +82,25 @@
 }
 
 .legalMentions a:hover {
+  color: #ffcc00; /* Change la couleur du texte au survol */
+  transform: scale(1.05); /* Agrandit légèrement le lien au survol */
+  text-decoration: underline; /* Ajoute une décoration soulignée */
+}
+
+li:hover {
+  cursor: pointer;
+  color: #ffcc00; /* Change la couleur du texte au survol */
+  transform: scale(1.05); /* Agrandit légèrement le lien au survol */
+  text-decoration: underline; /* Ajoute une décoration soulignée */
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  cursor: pointer;
   color: #ffcc00; /* Change la couleur du texte au survol */
   transform: scale(1.05); /* Agrandit légèrement le lien au survol */
   text-decoration: underline; /* Ajoute une décoration soulignée */
@@ -243,7 +270,7 @@
     .logo {
       height: 80px; /* Ajuste la taille du logo selon vos besoins */
       border-radius: 50%;
-      margin-left: 110px;
+      margin-left: 150px;
     }
   
     .livre {
@@ -263,11 +290,15 @@
     .legalMentions {
       text-align: center;
       font-size: 12px;
-      margin: 40px 0 0px 10%;
+      margin: 40px 0 0px 23%;
     }
 
-    .column2, .column1 {
+    .column1 {
       margin: 20px 10px 60px 30px;
     }
   
+    .column2 {
+      margin: 20px 10px 60px 90px;
+    }
+
     }

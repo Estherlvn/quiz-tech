@@ -45,12 +45,14 @@
   font-size: 18px;
   padding: 0px 40px;
   transition: background-color 0.3s;
+  text-decoration: none;
 }
 
 .nav a:hover {
   background-color: #FBD7D5;
   color: #333;
   border-radius: 2px;
+  text-decoration: none;
 }
 
 .boutonLogImage {

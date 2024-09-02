@@ -1,8 +1,13 @@
 // src/pages/MentionsLegales.jsx
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './MentionsLegales.module.css'; // Vous pouvez ajouter un fichier CSS pour styliser cette page
 
 const MentionsLegales = () => {
+  // useEffect pour faire défiler vers le haut à l'ouverture de la page
+  useEffect(() => {
+    window.scrollTo(0, 0); // Fait défiler la page vers le haut
+  }, []);
+
   return (
     <div className={styles.container}>
       <h1>Mentions Légales</h1>

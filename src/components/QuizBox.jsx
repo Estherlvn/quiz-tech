@@ -6,34 +6,34 @@ import technos from '../data/technos';
 import uxui from '../data/uxui';
 import css from '../data/css';
 import html from '../data/html';
-import react from '../data/react';
+import react from '../data/react'; 
 import bootstrap from '../data/bootstrap';
-import python from '../data/python';
 import javascript from '../data/javascript';
+import python from '../data/python';
 
 const QuizBox = ({ selectedTheme }) => {
   const questions = selectedTheme === 'uxui'
     ? uxui
     : selectedTheme === 'css'
-      ? css
-      : selectedTheme === 'html'
-        ? html
-        : selectedTheme === 'react'
-          ? react
-          : selectedTheme === 'bootstrap'
-            ? bootstrap
-            : selectedTheme === 'python'
-            ? python
-            : selectedTheme === 'javascript'
-            ? javascript
-            : technos; // Sélectionne les questions en fonction du thème
+    ? css
+    : selectedTheme === 'html'
+    ? html
+    : selectedTheme === 'react'
+    ? react
+    : selectedTheme === 'bootstrap'
+    ? bootstrap
+    : selectedTheme === 'javascript'
+    ? javascript
+    : selectedTheme === 'python'
+    ? python
+    : technos; 
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [answersHistory, setAnswersHistory] = useState([]);
-  const [incorrectAnswers, setIncorrectAnswers] = useState([]); // État pour suivre les mauvaises réponses
+  const [incorrectAnswers, setIncorrectAnswers] = useState([]); 
 
   const handleAnswerClick = (answer) => {
     setSelectedAnswer(answer);
@@ -45,7 +45,6 @@ const QuizBox = ({ selectedTheme }) => {
       updatedAnswersHistory[currentQuestionIndex] = selectedAnswer;
       setAnswersHistory(updatedAnswersHistory);
 
-      // Vérifiez si la réponse est incorrecte
       if (!selectedAnswer.isCorrect) {
         setIncorrectAnswers((prev) => [
           ...prev,
@@ -59,7 +58,7 @@ const QuizBox = ({ selectedTheme }) => {
       } else {
         setShowResult(true);
       }
-      setSelectedAnswer(null); // Réinitialise la réponse sélectionnée pour la question suivante
+      setSelectedAnswer(null); 
     }
   };
 
@@ -75,7 +74,7 @@ const QuizBox = ({ selectedTheme }) => {
     setScore(0);
     setShowResult(false);
     setAnswersHistory([]);
-    setIncorrectAnswers([]); // Réinitialise les mauvaises réponses
+    setIncorrectAnswers([]); 
   };
 
   const calculateScore = useCallback(() => {
@@ -86,21 +85,27 @@ const QuizBox = ({ selectedTheme }) => {
     setScore(calculateScore());
   }, [answersHistory, calculateScore]);
 
-  // Réinitialiser l'état du quiz lorsque le thème change
   useEffect(() => {
     setCurrentQuestionIndex(0);
     setScore(0);
     setShowResult(false);
     setSelectedAnswer(null);
     setAnswersHistory([]);
-    setIncorrectAnswers([]); // Réinitialise les mauvaises réponses
+    setIncorrectAnswers([]); 
+
+    // Fonction de défilement vers la position spécifique
+    const scrollToPosition = () => {
+      window.scrollTo({ top: window.innerHeight * 0.90, behavior: 'smooth' });
+    };
+
+    // Appeler la fonction pour effectuer le défilement
+    scrollToPosition();
   }, [selectedTheme]);
 
   return (
     <div className={styles.quiz}>
       {showResult ? (
         <>
-          {/* Intégrer QuizResultHandler pour enregistrer le résultat */}
           <QuizResultHandler quizTitle={selectedTheme} score={score} />
           <Result score={score} total={questions.length} onRestart={handleRestart} />
           {incorrectAnswers.length > 0 && (
@@ -135,10 +140,10 @@ const QuizBox = ({ selectedTheme }) => {
               {selectedTheme === 'uxui' ? 'UX UI' :
               selectedTheme === 'css' ? 'CSS' : 
               selectedTheme === 'html' ? 'HTML' : 
-              selectedTheme === 'react' ? 'React' :
+              selectedTheme === 'react' ? 'React' : 
               selectedTheme === 'bootstrap' ? 'Bootstrap' :
+              selectedTheme === 'javascript' ? 'JavaScript' :
               selectedTheme === 'python' ? 'Python' :
-              selectedTheme === 'javascript' ? 'Javascript':
               'Technos'}
             </h1>
             <h2 className={styles.questionTitle}>Question {currentQuestionIndex + 1}</h2>

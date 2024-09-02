@@ -142,6 +142,27 @@
     background-color:#e594a4;
     color: #fff;
   }
+
+  .scrollToTopButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  .arrow {
+    width: 40px; /* Ajustez la taille de l'icône de la flèche */
+    height: 40px;
+    transition: transform 0.3s;
+  }
+  
+  .scrollToTopButton:hover .arrow {
+    transform: scale(1.1); /* Agrandit légèrement l'image au survol */
+  }
+  
   
 
   @media screen and (max-width: 1120px) {

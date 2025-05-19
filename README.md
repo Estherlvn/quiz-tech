@@ -1,3 +1,101 @@
+# 🚀 Déploiement d'une application React sur un serveur Apache
+
+Ce guide décrit les étapes pour mettre en ligne une application **React** sur un **serveur distant Apache** à l’aide de **FileZilla** (transfert FTP) et **PuTTY** (connexion SSH). L'application est servie avec **Node.js + Express**, et configurée via Apache avec un proxy.
+
+## 🛠️ Prérequis
+
+* Application React fonctionnelle
+* Un serveur Apache configuré (accès FTP + SSH)
+* Node.js et npm installés sur le serveur
+* Apache2 installé sur le serveur
+* Les outils suivants installés localement :
+
+  * [FileZilla](https://filezilla-project.org/)
+  * [PuTTY](https://www.putty.org/)
+  * [VS Code](https://code.visualstudio.com/) (ou autre éditeur de texte)
+
+## 📁 Étape 1 – Connexion au serveur
+
+### A. Connexion FTP (avec FileZilla)
+
+1. Ouvrir FileZilla
+2. Renseigner les champs :
+
+   * **Hôte** : IP ou nom de domaine du serveur
+   * **Nom d’utilisateur**
+   * **Mot de passe**
+   * **Port** : 21 (ou autre selon configuration)
+3. Se connecter et naviguer dans les dossiers du serveur
+
+### B. Connexion SSH (avec PuTTY)
+
+1. Ouvrir PuTTY
+2. Entrer l’adresse IP du serveur dans “Host Name”
+3. Cliquer sur “Open”
+4. S’authentifier avec vos identifiants
+
+## ⚙️ Étape 2 – Préparer l’application React
+
+### A. Ajouter un fichier `server.js`
+
+Créer un fichier `server.js` à la racine du projet React
+
+### B. Modifier `package.json`
+
+S'assurer que la ligne `"homepage": "."` est bien définie (surtout pour React Router)
+
+## ⚙️ Étape 3 – Build et installation des dépendances
+
+Depuis le terminal (via PuTTY ou en local si build puis upload) :
+
+```bash
+npm install
+npm install express
+npm run build
+```
+
+## 📤 Étape 4 – Transfert des fichiers sur le serveur
+
+Utiliser FileZilla pour transférer :
+
+* Le dossier `build/`
+* Le fichier `server.js`
+* Le fichier `package.json` (optionnel mais recommandé)
+* Le dossier `node_modules/` (facultatif, sinon `npm install` côté serveur)
+
+## 🌐 Étape 5 – Configuration d'Apache
+
+### A. Créer un fichier `.conf` Apache
+
+### B. Activer le proxy Apache et la configuration
+
+Dans le terminal via PuTTY :
+
+```bash
+sudo a2enmod proxy
+sudo a2enmod proxy_http
+sudo a2ensite mon-projet.conf
+sudo systemctl reload apache2
+```
+
+## 🖥️ Étape 6 – Lancer le serveur Node.js
+
+Toujours depuis PuTTY :
+
+```bash
+cd /chemin/vers/le/projet
+node server.js
+```
+
+Si le déploiement a fonctionné, le message suivant devrait apparaître :
+
+```
+Server is running on port 3000
+```
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

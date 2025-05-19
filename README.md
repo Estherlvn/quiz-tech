@@ -1,4 +1,4 @@
-# 🚀 Déploiement d'une application React sur un serveur Apache
+## 🚀 Déploiement de l'application (React) sur un serveur Apache
 
 Ce guide décrit les étapes pour mettre en ligne une application **React** sur un **serveur distant Apache** à l’aide de **FileZilla** (transfert FTP) et **PuTTY** (connexion SSH). L'application est servie avec **Node.js + Express**, et configurée via Apache avec un proxy.
 
